@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.mvp.photradeproject.Presenter.RegisterPresenter;
 import com.mvp.photradeproject.R;
 import com.mvp.photradeproject.View.Activity.AuthActivity;
 
@@ -24,6 +25,7 @@ public class RegisterFragment extends Fragment {
     TextView hasacctext;
     Button registerbtn;
     Context context;
+    RegisterPresenter registerpresenter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -55,25 +57,24 @@ public class RegisterFragment extends Fragment {
         hasacctext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((AuthActivity)getActivity()).doChangeFragment(new LoginFragment());
+                ((AuthActivity) getActivity()).doChangeFragment(new LoginFragment());
 
             }
         });
 
-        return view;
+        return _view;
     }
 
     public void doRegisterSuccess(String message) {
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
-        ((AuthActivity)getActivity()).doChangeFragment(new LoginFragment());
+        ((AuthActivity) getActivity()).doChangeFragment(new LoginFragment());
     }
 
-    @Override
     public void doRegisterFail(String message) {
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
     }
 
-    @Override
     public void doConnectionError(String message) {
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
     }
+}
