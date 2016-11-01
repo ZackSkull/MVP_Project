@@ -1,4 +1,4 @@
-package com.mvp.photradeproject.Presenter;
+package com.mvp.photradeproject.Presenter.Auth;
 
 /**
  * Created by Zackzack on 28/10/2016.

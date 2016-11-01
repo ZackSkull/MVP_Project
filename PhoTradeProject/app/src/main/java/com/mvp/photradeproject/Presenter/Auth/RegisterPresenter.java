@@ -1,4 +1,4 @@
-package com.mvp.photradeproject.Presenter;
+package com.mvp.photradeproject.Presenter.Auth;
 
 import com.mvp.photradeproject.Model.Connections.ConnectionAPI;
 import com.mvp.photradeproject.Model.Responses.UserResponse;
