@@ -15,12 +15,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.mvp.photradeproject.Model.SessionManager;
 import com.mvp.photradeproject.R;
 import com.mvp.photradeproject.View.Activity.AuthActivity;
 
-public class MainActivity extends AppCompatActivity
+public class MainActivity extends ParentActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    SessionManager sessionManager;
     Context context;
 
     @Override
@@ -31,7 +33,7 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         context = getApplicationContext();
-        doChangeActivity();
+        doChangeActivity(context, AuthActivity.class);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -50,12 +52,6 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-    }
-
-    public void doChangeActivity() {
-        Intent _intent = new Intent(context, AuthActivity.class);
-        _intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        context.startActivity(_intent);
     }
 
     @Override

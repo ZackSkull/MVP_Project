@@ -16,4 +16,7 @@ public interface APIModel {
 
     @POST("user/register")
     Call<UserResponse> doRegister(@Body Map<String, String> userdata);
+
+    @POST("user/login")
+    Call<UserResponse> doLogin(@Body Map<String, String> userdata);
 }

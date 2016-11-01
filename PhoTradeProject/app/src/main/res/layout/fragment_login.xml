@@ -17,7 +17,7 @@
             android:layout_gravity="center_horizontal"
             android:inputType="textEmailAddress"
             android:ems="10"
-            android:id="@+id/emailtf"
+            android:id="@+id/login_txtemail"
             android:hint="Email" />
 
         <EditText
@@ -26,14 +26,14 @@
             android:layout_gravity="center_horizontal"
             android:inputType="textPassword"
             android:ems="10"
-            android:id="@+id/passwordtf"
+            android:id="@+id/login_txtpassword"
             android:hint="Password" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:id="@+id/loginbtn"
+            android:id="@+id/login_loginbtn"
             android:text="Login"/>
 
         <TextView
@@ -41,6 +41,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="Register"
-            android:id="@+id/registertext"/>
+            android:id="@+id/login_txtregister"/>
     </LinearLayout>
 </LinearLayout>

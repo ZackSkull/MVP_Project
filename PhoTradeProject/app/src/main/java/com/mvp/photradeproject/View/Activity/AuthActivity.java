@@ -7,7 +7,7 @@ import android.os.Bundle;
 import com.mvp.photradeproject.R;
 import com.mvp.photradeproject.View.Fragment.LoginFragment;
 
-public class AuthActivity extends AppCompatActivity {
+public class AuthActivity extends ParentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
