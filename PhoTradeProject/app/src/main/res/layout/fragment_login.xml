@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
+    android:background="#aaaaaa"
     tools:context="com.mvp.photradeproject.View.Fragment.LoginFragment">
 
     <LinearLayout
@@ -10,7 +11,9 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_gravity="center"
-        android:padding="40dp">
+        android:padding="40dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp">
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -18,7 +21,7 @@
             android:inputType="textEmailAddress"
             android:ems="10"
             android:id="@+id/login_txtemail"
-            android:hint="Email" />
+            android:hint="@string/Email" />
 
         <EditText
             android:layout_width="wrap_content"
@@ -27,20 +30,20 @@
             android:inputType="textPassword"
             android:ems="10"
             android:id="@+id/login_txtpassword"
-            android:hint="Password" />
+            android:hint="@string/Password" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:id="@+id/login_loginbtn"
-            android:text="Login"/>
+            android:text="@string/Login"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="Register"
+            android:text="@string/Register"
             android:id="@+id/login_txtregister"/>
     </LinearLayout>
 </LinearLayout>

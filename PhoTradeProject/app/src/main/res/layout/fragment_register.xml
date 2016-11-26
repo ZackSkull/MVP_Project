@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
+    android:background="#aaaaaa"
     tools:context="com.mvp.photradeproject.View.Fragment.RegisterFragment">
 
     <LinearLayout
@@ -10,6 +11,8 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:padding="40dp">
 
         <EditText
@@ -19,7 +22,7 @@
             android:inputType="text"
             android:ems="10"
             android:id="@+id/regis_txtnama"
-            android:hint="Nama" />
+            android:hint="@string/Name" />
 
         <EditText
             android:layout_width="wrap_content"
@@ -28,7 +31,7 @@
             android:inputType="textEmailAddress"
             android:ems="10"
             android:id="@+id/regis_txtemail"
-            android:hint="Email" />
+            android:hint="@string/Email" />
 
         <EditText
             android:layout_width="wrap_content"
@@ -37,7 +40,7 @@
             android:inputType="textPassword"
             android:ems="10"
             android:id="@+id/regis_txtpassword1"
-            android:hint="Password" />
+            android:hint="@string/Password" />
 
         <EditText
             android:layout_width="wrap_content"
@@ -46,20 +49,20 @@
             android:inputType="textPassword"
             android:ems="10"
             android:id="@+id/regis_txtpassword2"
-            android:hint="Re-Password" />
+            android:hint="@string/RPassword" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:id="@+id/regis_registerbtn"
-            android:text="Register"/>
+            android:text="@string/Register"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="Already has an account."
+            android:text="@string/HasAcc"
             android:id="@+id/regis_txtlogin"/>
     </LinearLayout>
 </LinearLayout>
