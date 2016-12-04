@@ -6,10 +6,68 @@ package com.mvp.photradeproject.Model.Basic;
 
 public class User {
     private String id;
+    private String username;
     private String email;
     private String name;
     private String photo;
     private String bio;
+    private String bornplace;
+    private String borndate;
+    private String city;
+    private String address;
+    private String phone;
+    private boolean gender;
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public boolean isGender() {
+        return gender;
+    }
+
+    public void setGender(boolean gender) {
+        this.gender = gender;
+    }
+
+    public String getCity() {
+
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getBornplace() {
+
+        return bornplace;
+    }
+
+    public void setBornplace(String bornplace) {
+        this.bornplace = bornplace;
+    }
+
+    public String getUsername() {
+
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
     public String getName() {
         return name;
