@@ -3,47 +3,74 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    android:background="#aaaaaa"
+    android:background="@color/backgroundlogin"
     tools:context="com.mvp.photradeproject.View.Fragment.LoginFragment">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_gravity="center"
-        android:padding="40dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp">
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:inputType="textEmailAddress"
-            android:ems="10"
-            android:id="@+id/login_txtemail"
-            android:hint="@string/Email" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:inputType="textPassword"
-            android:ems="10"
-            android:id="@+id/login_txtpassword"
-            android:hint="@string/Password" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:id="@+id/login_loginbtn"
-            android:text="@string/Login"/>
+        android:layout_gravity="center">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="@string/Register"
-            android:id="@+id/login_txtregister"/>
+            android:text="@string/Login"
+            android:textColor="@color/White"
+            android:textSize="35dp"
+            android:textAlignment="center"
+            android:textStyle="bold"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:paddingTop="10dp"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:paddingBottom="20dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:background="@drawable/shape"
+            >
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:inputType="textEmailAddress"
+                android:ems="10"
+                android:id="@+id/login_txtemail"
+                android:hint="@string/Email"
+                android:textColorHint="@color/White"
+                android:textAlignment="center" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:inputType="textPassword"
+                android:ems="10"
+                android:id="@+id/login_txtpassword"
+                android:hint="@string/Password"
+                android:textColorHint="@color/White"
+                android:textAlignment="center" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/login_loginbtn"
+                android:text="@string/Login"
+                android:textColor="@color/White"
+                android:background="@drawable/buttonauthborder" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/Register"
+                android:textColor="@color/White"
+                android:id="@+id/login_txtregister"/>
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>
