@@ -1,12 +1,13 @@
 package com.mvp.photradeproject.Model.Responses;
 
+import com.mvp.photradeproject.Model.Basic.Response;
 import com.mvp.photradeproject.Model.Basic.Thread;
 
 /**
  * Created by Zackzack on 04/12/2016.
  */
 
-public class ThreadResponse {
+public class ThreadResponse extends Response{
     private Thread thread;
 
     public Thread getThread() {

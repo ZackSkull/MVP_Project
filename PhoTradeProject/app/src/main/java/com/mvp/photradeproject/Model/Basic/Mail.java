@@ -1,10 +1,10 @@
 package com.mvp.photradeproject.Model.Basic;
 
 /**
- * Created by Zackzack on 04/12/2016.
+ * Created by Zackzack on 17/12/2016.
  */
 
-public class Message {
+public class Mail {
     private String id;
     private String subject;
     private String text;
@@ -61,3 +61,4 @@ public class Message {
 
     private String time;
 }
+

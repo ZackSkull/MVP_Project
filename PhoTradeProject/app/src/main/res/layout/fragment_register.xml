@@ -34,10 +34,8 @@
             android:background="@drawable/shape">
 
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:textAlignment="center"
                 android:inputType="text"
                 android:ems="10"
                 android:id="@+id/regis_txtnama"
@@ -45,10 +43,8 @@
                 android:textColorHint="@color/White" />
 
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:textAlignment="center"
                 android:inputType="textEmailAddress"
                 android:ems="10"
                 android:id="@+id/regis_txtemail"
@@ -56,10 +52,8 @@
                 android:textColorHint="@color/White" />
 
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:textAlignment="center"
                 android:inputType="textPassword"
                 android:ems="10"
                 android:id="@+id/regis_txtpassword1"
@@ -67,10 +61,8 @@
                 android:textColorHint="@color/White" />
 
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:textAlignment="center"
                 android:inputType="textPassword"
                 android:ems="10"
                 android:id="@+id/regis_txtpassword2"
