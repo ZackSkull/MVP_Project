@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">PhoTradeProject</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="connection_error">"Sorry, please check your connection."</string>
+    <string name="action_settings">Settings</string>
+    <string name="Name">Name</string>
+    <string name="Username">Username</string>
+    <string name="KLahir">Kota Lahir</string>
+    <string name="TLahir">Tanggal Lahir</string>
+    <string name="Telphone">Phone No.</string>
+    <string name="Alamat">Alamat</string>
+    <string name="Bio">Bio</string>
+    <string name="Email">Email</string>
+    <string name="Password">Password</string>
+    <string name="RPassword">Re-Password</string>
+    <string name="Gender">Gender</string>
+    <string name="Register">Register</string>
+    <string name="Login">Login</string>
+    <string name="HasAcc">Already has an account.</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
