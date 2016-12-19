@@ -1,5 +1,4 @@
-package com.mvp.ptrade.View.Fragment.Tabs;
-
+package com.mvp.ptrade.View.Fragment.Tabs.InboxTabs;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,13 +9,12 @@ import android.view.ViewGroup;
 import com.mvp.ptrade.R;
 
 /**
- * Created by Zackzack on 18/12/2016.
+ * Created by Zackzack on 19/12/2016.
  */
 
-public class TabFragment2 extends Fragment {
-
+public class TabFragmentSend extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.tab_fragment_2, container, false);
+        return inflater.inflate(R.layout.message_send_fragment, container, false);
     }
 }

@@ -11,4 +11,9 @@
         android:orderInCategory="100"
         android:title="Login/Register"
         app:showAsAction="never"/>
+    <item
+        android:id="@+id/InboxItemOption"
+        android:orderInCategory="100"
+        android:title="Go to Inbox Activity"
+        app:showAsAction="never"/>
 </menu>

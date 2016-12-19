@@ -1,4 +1,4 @@
-package com.mvp.ptrade.Model;
+package com.mvp.ptrade.Model.Adapter;
 
 /**
  * Created by Zackzack on 18/12/2016.
@@ -9,14 +9,15 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.mvp.ptrade.View.Fragment.Tabs.TabFragment1;
-import com.mvp.ptrade.View.Fragment.Tabs.TabFragment2;
-import com.mvp.ptrade.View.Fragment.Tabs.TabFragment3;
+import com.mvp.ptrade.View.Fragment.Tabs.InboxTabs.TabFragmentInbox;
+import com.mvp.ptrade.View.Fragment.Tabs.InboxTabs.TabFragmentSend;
+import com.mvp.ptrade.View.Fragment.Tabs.ThreadTabs.TabFragment1;
+import com.mvp.ptrade.View.Fragment.Tabs.ThreadTabs.TabFragment2;
 
-public class PageAdapter extends FragmentStatePagerAdapter {
+public class InboxPageAdapter extends FragmentStatePagerAdapter {
     int mNumOfTabs;
 
-    public PageAdapter(FragmentManager fm, int NumOfTabs) {
+    public InboxPageAdapter(FragmentManager fm, int NumOfTabs) {
         super(fm);
         this.mNumOfTabs = NumOfTabs;
     }
@@ -26,14 +27,11 @@ public class PageAdapter extends FragmentStatePagerAdapter {
 
         switch (position) {
             case 0:
-                TabFragment1 tab1 = new TabFragment1();
+                TabFragmentInbox tab1 = new TabFragmentInbox();
                 return tab1;
             case 1:
-                TabFragment2 tab2 = new TabFragment2();
+                TabFragmentSend tab2 = new TabFragmentSend();
                 return tab2;
-            case 2:
-                TabFragment3 tab3 = new TabFragment3();
-                return tab3;
             default:
                 return null;
         }
