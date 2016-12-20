@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
         android:inputType="textPersonName"
-        android:hint="To"
+        android:hint="From"
         android:ems="10"
         android:id="@+id/editText" />
 
@@ -41,7 +41,7 @@
         android:layout_gravity="bottom"/>
 
     <Button
-        android:text="Cancle"
+        android:text="Close"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
