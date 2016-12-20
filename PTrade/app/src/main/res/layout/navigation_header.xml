@@ -18,6 +18,7 @@
         android:layout_gravity="bottom"
         android:layout_marginLeft="100dp"
         android:padding="30dp"
+        android:id="@+id/nav_profile_pic"
         android:src="@mipmap/profile_pic" />
 
     <LinearLayout

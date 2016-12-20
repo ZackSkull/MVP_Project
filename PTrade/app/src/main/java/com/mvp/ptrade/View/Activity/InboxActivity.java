@@ -27,6 +27,9 @@ public class InboxActivity extends ParentActivity{
         setSupportActionBar(toolbar);
         context = getApplicationContext();
 
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setText("Inbox"));
         tabLayout.addTab(tabLayout.newTab().setText("Send"));
@@ -54,6 +57,10 @@ public class InboxActivity extends ParentActivity{
             }
         });
     }
+    @Override
+    public void onBackPressed() {
+        doChangeActivity(context, MainActivity.class);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -63,17 +70,15 @@ public class InboxActivity extends ParentActivity{
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        else if (id == R.id.autenticationmenu) {
-            doChangeActivity(context, AuthActivity.class);
-            return true;
-        }
-        else if (id == R.id.InboxItemOption) {
-            doChangeActivity(context, InboxActivity.class);
-            return true;
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                //View decorview = getWindow().getDecorView();
+                //decorview.setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION|View.SYSTEM_UI_FLAG_FULLSCREEN);
+                onBackPressed();
+                return true;
+            case R.id.autenticationmenu:
+                doChangeActivity(context, AuthActivity.class);
+                return true;
         }
 
         return super.onOptionsItemSelected(item);
