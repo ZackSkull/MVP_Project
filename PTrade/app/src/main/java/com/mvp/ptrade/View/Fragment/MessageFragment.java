@@ -2,8 +2,6 @@ package com.mvp.ptrade.View.Fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +15,7 @@ import com.mvp.ptrade.R;
 public class MessageFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        ViewGroup layout = (ViewGroup) inflater.inflate(R.layout.messageitem, container, false);
+        ViewGroup layout = (ViewGroup) inflater.inflate(R.layout.item_message, container, false);
 
 //        FragmentManager fm = getFragmentManager();
 //        FragmentTransaction ft = fm.beginTransaction();

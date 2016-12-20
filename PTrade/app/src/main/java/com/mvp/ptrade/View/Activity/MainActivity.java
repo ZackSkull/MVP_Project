@@ -11,6 +11,8 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.mvp.ptrade.Model.Adapter.MainPageAdapter;
@@ -20,6 +22,7 @@ public class MainActivity extends ParentActivity{
     Context context;
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle drawerToggle;
+    ImageView nav_profile_pic;
     NavigationView navigation;
 
     @Override
@@ -29,6 +32,8 @@ public class MainActivity extends ParentActivity{
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         context = getApplicationContext();
 
         //ViewPager
@@ -73,11 +78,19 @@ public class MainActivity extends ParentActivity{
 
 
     private void initInstancesNavigation() {
-        //getSupportActionBar().setHomeButtonEnabled(true);
-        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        drawerLayout = (DrawerLayout) findViewById(R.id.activity_main_drawer);
-        drawerToggle = new ActionBarDrawerToggle(MainActivity.this, drawerLayout, R.string.hello_world, R.string.hello_world);
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawerToggle = new ActionBarDrawerToggle(MainActivity.this, drawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close){
+            @Override
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+            }
+
+            @Override
+            public void onDrawerClosed(View drawerView) {
+                super.onDrawerClosed(drawerView);
+            }
+        };
         drawerLayout.setDrawerListener(drawerToggle);
 
         navigation = (NavigationView) findViewById(R.id.navigation_view);
@@ -92,8 +105,9 @@ public class MainActivity extends ParentActivity{
                     case R.id.navigation_item_2:
                         Toast.makeText(context, R.string.navigation_view_item_2, Toast.LENGTH_SHORT).show();
                         break;
-                    case R.id.navigation_item_3:
-                        Toast.makeText(context, R.string.navigation_view_item_3, Toast.LENGTH_SHORT).show();
+                    case R.id.nav_item_inbox:
+                        doChangeActivity(context, InboxActivity.class);
+                        //Toast.makeText(context, R.string.Inbox, Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.navigation_item_4:
                         Toast.makeText(context, R.string.navigation_view_item_4, Toast.LENGTH_SHORT).show();
@@ -103,6 +117,13 @@ public class MainActivity extends ParentActivity{
                         break;
                 }
                 return false;
+            }
+        });
+        nav_profile_pic = (ImageView) navigation.getHeaderView(0).findViewById(R.id.nav_profile_pic);
+        nav_profile_pic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                doChangeActivity(context,ProfileActivity.class);
             }
         });
 
@@ -128,17 +149,15 @@ public class MainActivity extends ParentActivity{
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        else if (id == R.id.autenticationmenu) {
-            doChangeActivity(context, AuthActivity.class);
-            return true;
-        }
-        else if (id == R.id.InboxItemOption) {
-            doChangeActivity(context, InboxActivity.class);
-            return true;
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                //View decorview = getWindow().getDecorView();
+                //decorview.setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION|View.SYSTEM_UI_FLAG_FULLSCREEN);
+                //onBackPressed();
+                return true;
+            case R.id.autenticationmenu:
+                doChangeActivity(context, AuthActivity.class);
+                return true;
         }
 
         return super.onOptionsItemSelected(item);
