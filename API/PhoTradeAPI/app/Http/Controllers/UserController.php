@@ -15,12 +15,12 @@ use Auth;
 class UserController extends Controller
 {
     function doRegister (Request $request) {
-    	$_userexist = User::where('userEmail', $request['email'])->get()->first();
+    	$_userexist = User::where('email', $request['email'])->get()->first();
     	if ($_userexist == null) {
 	    	$_userdatas = array(
-	    		'userUsername'     => $request['name'],
-	    		'userEmail'    => $request['email'],
-	    		'userPassword' => Hash::make($request['password'])
+	    		'username' => $request['username'],
+	    		'email'    => $request['email'],
+	    		'password' => Hash::make($request['password'])
 	    	);
 
 	    	$_user = new User;
@@ -34,8 +34,8 @@ class UserController extends Controller
 
     function doLogin (Request $request) {
     	$_userdatas = array(
-    		'userEmail'    => $request['email'],
-			'userPassword' => Hash::make($request['password'])
+    		'email'    => $request['email'],
+			'password' => $request['password']
     	);
 
     	if(Auth::attempt($_userdatas))

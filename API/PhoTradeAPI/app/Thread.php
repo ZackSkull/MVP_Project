@@ -13,4 +13,9 @@ class Thread extends Model
     protected $hidden = [
         'timestamps'
     ];
+
+    public function products()
+    {
+        return $this->hasOne(Product::class);
+    }
 }

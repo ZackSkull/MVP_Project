@@ -13,4 +13,9 @@ class Product extends Model
     protected $hidden = [
         'timestamps'
     ];
+
+    public function thread()
+    {
+        return $this->belongsTo(Thread::class);
+    }
 }

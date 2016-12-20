@@ -14,9 +14,9 @@ class CreateThreadsTable extends Migration
     {
         Schema::create('threads', function (Blueprint $table) {
             $table->increments('trId');
-            $table->int('trProdId');
-            $table->int('trUser');
-            $table->int('trUserBuy')->nullable()->default(0);
+            $table->integer('trProdId');
+            $table->integer('trUser');
+            $table->integer('trUserBuy')->nullable()->default(0);
             $table->boolean('trStatus');
             $table->string('trLat');
             $table->string('trLong');
