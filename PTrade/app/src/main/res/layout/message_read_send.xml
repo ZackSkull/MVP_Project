@@ -11,7 +11,11 @@
         android:inputType="textPersonName"
         android:hint="To"
         android:ems="10"
-        android:id="@+id/editText" />
+        android:id="@+id/editText"
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -21,7 +25,11 @@
         android:inputType="textPersonName"
         android:hint="Subject"
         android:ems="10"
-        android:id="@+id/editText2" />
+        android:id="@+id/editText2"
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false" />
 
     <EditText
         android:layout_width="match_parent"
@@ -30,15 +38,11 @@
         android:id="@+id/editText3"
         android:layout_height="match_parent"
         android:layout_below="@id/editText2"
-        android:layout_above="@id/button"/>
-
-    <Button
-        android:text="Send"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/button2"
-        android:id="@+id/button"
-        android:layout_gravity="bottom"/>
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:layout_above="@+id/button2" />
 
     <Button
         android:text="Cancle"
