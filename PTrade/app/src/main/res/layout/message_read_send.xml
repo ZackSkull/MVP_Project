@@ -9,13 +9,13 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
         android:inputType="textPersonName"
-        android:hint="From"
+        android:hint="To"
         android:ems="10"
         android:id="@+id/editText"
         android:clickable="false"
         android:cursorVisible="false"
         android:focusable="false"
-        android:focusableInTouchMode="false" />
+        android:focusableInTouchMode="false"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -42,24 +42,14 @@
         android:cursorVisible="false"
         android:focusable="false"
         android:focusableInTouchMode="false"
-        android:layout_above="@+id/button" />
+        android:layout_above="@+id/button2" />
 
     <Button
-        android:text="Close"
+        android:text="Cancle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:id="@+id/button2"
         android:layout_gravity="bottom"/>
-
-    <Button
-        android:text="Replay"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/button"
-        android:layout_gravity="bottom"
-        android:layout_above="@+id/button2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

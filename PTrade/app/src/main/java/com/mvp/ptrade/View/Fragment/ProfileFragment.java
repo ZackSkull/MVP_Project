@@ -1,5 +1,4 @@
 package com.mvp.ptrade.View.Fragment;
-
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -24,11 +23,11 @@ import com.mvp.ptrade.View.Activity.ProfileActivity;
  */
 
 public class ProfileFragment extends Fragment implements iPresenterUserResponse {
-    EditText name,username,email,city,address,phone,bio;
+    EditText name,username,email,city,address,phone,bio,date;
     Spinner gender;
-    DatePicker datePicker;
     Context context;
     Button save, close;
+    DatePicker datePicker;
     private String[] array_spinner;
 
     @Override
@@ -43,7 +42,7 @@ public class ProfileFragment extends Fragment implements iPresenterUserResponse 
         phone = (EditText) _view.findViewById(R.id.frag_pro_phone);
         bio = (EditText) _view.findViewById(R.id.frag_pro_bio);
         gender = (Spinner) _view.findViewById(R.id.frag_pro_spinner_gender);
-        datePicker = (DatePicker) _view.findViewById(R.id.frag_pro_datePicker);
+        date = (EditText) _view.findViewById(R.id.frag_pro_date);
         save = (Button) _view.findViewById(R.id.frag_pro_btnsave);
         close = (Button) _view.findViewById(R.id.frag_pro_btnclose);
 
