@@ -17,7 +17,8 @@
                 android:layout_height="100dp"
                 android:layout_marginRight="10dp"
                 android:src="@mipmap/profile_pic"
-                android:scaleType="centerCrop"/>
+                android:scaleType="centerCrop"
+                android:id="@+id/trditem_pic" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -34,7 +35,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Deskripsi"
-                android:id="@+id/trditem_textmessage"
+                android:id="@+id/trditem_textdesc"
                 android:textSize="15dp"/>
         </LinearLayout>
     </LinearLayout>

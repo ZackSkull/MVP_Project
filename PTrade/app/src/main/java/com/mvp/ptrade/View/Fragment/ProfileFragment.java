@@ -13,6 +13,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.mvp.ptrade.Model.Responses.UserResponse;
+import com.mvp.ptrade.Model.SessionManager;
 import com.mvp.ptrade.Presenter.iPresenterUserResponse;
 import com.mvp.ptrade.R;
 import com.mvp.ptrade.View.Activity.MainActivity;
@@ -29,6 +30,7 @@ public class ProfileFragment extends Fragment implements iPresenterUserResponse 
     Button save, close;
     DatePicker datePicker;
     private String[] array_spinner;
+    SessionManager sessionManager;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -47,6 +49,7 @@ public class ProfileFragment extends Fragment implements iPresenterUserResponse 
         close = (Button) _view.findViewById(R.id.frag_pro_btnclose);
 
         context = getContext();
+        sessionManager = new SessionManager(context);
 
         //spinner items
         this.array_spinner = new String[]{
@@ -54,6 +57,9 @@ public class ProfileFragment extends Fragment implements iPresenterUserResponse 
         };
         ArrayAdapter<String> spinneradapter = new ArrayAdapter<>(_view.getContext(),android.R.layout.simple_spinner_item,array_spinner);
         gender.setAdapter(spinneradapter);
+
+
+        setsession();
 
         save.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -69,6 +75,20 @@ public class ProfileFragment extends Fragment implements iPresenterUserResponse 
         });
 
         return _view;
+    }
+    private void setsession(){
+        name.setText(sessionManager.getUserLoggedIn().getName());
+        username.setText(sessionManager.getUserLoggedIn().getUsername());
+        email.setText(sessionManager.getUserLoggedIn().getEmail());
+        city.setText(sessionManager.getUserLoggedIn().getCity());
+        address.setText(sessionManager.getUserLoggedIn().getAddress());
+        phone.setText(sessionManager.getUserLoggedIn().getPhone());
+        bio.setText(sessionManager.getUserLoggedIn().getBio());
+        date.setText(sessionManager.getUserLoggedIn().getBorndate());
+        if (sessionManager.getUserLoggedIn().getGender() == true)
+            gender.setSelection(1);
+        else
+            gender.setSelection(2);
     }
 
     @Override

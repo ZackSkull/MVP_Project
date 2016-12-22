@@ -34,7 +34,7 @@ public class User {
         this.phone = phone;
     }
 
-    public boolean isGender() {
+    public boolean getGender() {
         return gender;
     }
 
@@ -93,12 +93,20 @@ public class User {
         this.bio = bio;
     }
 
+    public String getBorndate() {
+        return borndate;
+    }
+
+    public void setBorndate(String borndate) {
+        this.borndate = borndate;
+    }
+
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String id) {
-        this.id = id;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getId() {

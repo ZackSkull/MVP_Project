@@ -9,9 +9,9 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
         android:inputType="textPersonName"
-        android:hint="From"
+        android:hint="@string/from"
         android:ems="10"
-        android:id="@+id/editText"
+        android:id="@+id/msgrec_sender"
         android:clickable="false"
         android:cursorVisible="false"
         android:focusable="false"
@@ -20,12 +20,12 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editText"
+        android:layout_below="@id/msgrec_sender"
         android:layout_marginBottom="5dp"
         android:inputType="textPersonName"
-        android:hint="Subject"
+        android:hint="@string/subject"
         android:ems="10"
-        android:id="@+id/editText2"
+        android:id="@+id/msgrec_subject"
         android:clickable="false"
         android:cursorVisible="false"
         android:focusable="false"
@@ -35,30 +35,30 @@
         android:layout_width="match_parent"
         android:inputType="textMultiLine"
         android:ems="10"
-        android:id="@+id/editText3"
+        android:id="@+id/msgrec_msg"
         android:layout_height="match_parent"
-        android:layout_below="@id/editText2"
         android:clickable="false"
         android:cursorVisible="false"
         android:focusable="false"
         android:focusableInTouchMode="false"
-        android:layout_above="@+id/button" />
+        android:layout_above="@+id/msgrec_btnreplay"
+        android:layout_below="@+id/msgrec_subject" />
 
     <Button
-        android:text="Close"
+        android:text="@string/close"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:id="@+id/button2"
+        android:id="@+id/msgrec_btnclose"
         android:layout_gravity="bottom"/>
 
     <Button
-        android:text="Replay"
+        android:text="@string/replay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button"
+        android:id="@+id/msgrec_btnreplay"
         android:layout_gravity="bottom"
-        android:layout_above="@+id/button2"
+        android:layout_above="@+id/msgrec_btnclose"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 

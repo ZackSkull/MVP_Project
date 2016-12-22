@@ -122,8 +122,8 @@ public class MainActivity extends ParentActivity{
                     case R.id.navigation_item_4:
                         Toast.makeText(context, R.string.navigation_view_item_4, Toast.LENGTH_SHORT).show();
                         break;
-                    case R.id.navigation_item_5:
-                        Toast.makeText(context, R.string.navigation_view_item_5, Toast.LENGTH_SHORT).show();
+                    case R.id.nav_logout:
+                        Toast.makeText(context, R.string.logout, Toast.LENGTH_SHORT).show();
                         break;
                 }
                 return false;

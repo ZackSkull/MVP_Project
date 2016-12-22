@@ -16,6 +16,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginRight="10dp"
+                android:id="@+id/msgitem_propic"
                 android:src="@mipmap/profile_pic"
                 android:scaleType="centerCrop"/>
         </LinearLayout>
@@ -41,7 +42,9 @@
                 android:layout_height="wrap_content"
                 android:text="Message"
                 android:id="@+id/msgitem_textmessage"
-                android:textSize="15dp"/>
+                android:textSize="15dp"
+                android:ellipsize="end"
+                android:maxLength="30"/>
         </LinearLayout>
     </LinearLayout>
 

@@ -44,4 +44,12 @@
     <string name="navigation_view_item_6">Navigation Item 6</string>
     <string name="navigation_view_category_1">Navigation View Category</string>
     <string name="navigation_view_category_2">Navigation View Category</string>
+
+    <string name="cancel">Cancel</string>
+    <string name="close">Close</string>
+    <string name="send">Send</string>
+    <string name="subject">Subject</string>
+    <string name="to">To</string>
+    <string name="from">From</string>
+    <string name="replay">Replay</string>
 </resources>
