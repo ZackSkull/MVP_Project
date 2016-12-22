@@ -12,7 +12,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 
 public class ConnectionAPI {
-    private static final String BASEURL = "http://localhost:8080/";  //192.168.0.100:8001/
+    private static final String BASEURL = "http://10.0.2.2:8080/";//192.168.0.100:8001/
     private static ConnectionAPI instance;
     private static APIModel api;
     private static Retrofit retrofit;

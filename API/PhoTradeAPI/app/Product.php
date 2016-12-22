@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+    protected $primaryKey = 'prodId';
+    
     protected $fillable = [
 		'prodName', 'prodType', 'prodBrand'
 	];
@@ -19,3 +21,4 @@ class Product extends Model
         return $this->belongsTo(Thread::class);
     }
 }
+
