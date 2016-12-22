@@ -38,8 +38,8 @@
                 android:layout_height="wrap_content"
                 android:inputType="text"
                 android:ems="10"
-                android:id="@+id/regis_txtnama"
-                android:hint="@string/Name"
+                android:id="@+id/regis_txtusername"
+                android:hint="@string/Username"
                 android:textColorHint="@color/White" />
 
             <EditText

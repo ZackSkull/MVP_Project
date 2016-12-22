@@ -21,7 +21,7 @@ public class LoginPresenter {
     iPresenterUserResponse loginResponse;
 
     public LoginPresenter (iPresenterUserResponse userResponse) {
-        this.loginResponse = loginResponse;
+        this.loginResponse = userResponse;
     }
 
     public void doLogin(String email, String password) {

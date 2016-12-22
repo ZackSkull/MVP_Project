@@ -12,7 +12,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 
 public class ConnectionAPI {
-    private static final String BASEURL = "http://localhost:8080/";//192.168.0.100:8001/
+    private static final String BASEURL = "http://localhost:8080/";  //192.168.0.100:8001/
     private static ConnectionAPI instance;
     private static APIModel api;
     private static Retrofit retrofit;
@@ -28,15 +28,9 @@ public class ConnectionAPI {
     }
 
     private ConnectionAPI() {
-//        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
-//        logging.setLevel(HttpLoggingInterceptor.Level.BODY);
-//        OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
-//        httpClient.addInterceptor(logging);
-
         retrofit = new Retrofit.Builder()
                 .baseUrl(BASEURL)
                 .addConverterFactory(GsonConverterFactory.create())
-//                .client(httpClient.build())
                 .build();
 
         api = retrofit.create(APIModel.class);

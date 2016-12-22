@@ -23,9 +23,9 @@ public class RegisterPresenter {
         this.registerresponse = registerresponse;
     }
 
-    public void doRegister(String name, String email, String password) {
+    public void doRegister(String username, String email, String password) {
         Map<String, String> _userdatas = new HashMap<>();
-        _userdatas.put("name", name);
+        _userdatas.put("username", username);
         _userdatas.put("email", email);
         _userdatas.put("password", password);
 

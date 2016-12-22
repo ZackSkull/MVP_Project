@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.mvp.ptrade.Model.Responses.UserResponse;
+import com.mvp.ptrade.Model.SessionManager;
 import com.mvp.ptrade.Presenter.Auth.LoginPresenter;
 import com.mvp.ptrade.Presenter.iPresenterUserResponse;
 import com.mvp.ptrade.R;
@@ -28,7 +29,7 @@ public class LoginFragment extends Fragment implements iPresenterUserResponse {
     EditText txtemail, txtpassword;
     Button btnlogin;
 
-    //SessionManager sessionManager;
+    SessionManager sessionManager;
     Context context;
     LoginPresenter loginpresenter;
 
@@ -43,15 +44,15 @@ public class LoginFragment extends Fragment implements iPresenterUserResponse {
         btnlogin    = (Button) _view.findViewById(R.id.login_loginbtn);
 
         context = getContext();
-        //sessionManager = new SessionManager(context);
+        sessionManager = new SessionManager(context);
         loginpresenter = new LoginPresenter(this);
 
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //percobaan tanpa login
-                AuthActivity.doChangeActivity(context, MainActivity.class);
-                //loginpresenter.doLogin(txtemail.getText().toString(), txtpassword.getText().toString());
+                //AuthActivity.doChangeActivity(context, MainActivity.class);
+                loginpresenter.doLogin(txtemail.getText().toString(), txtpassword.getText().toString());
             }
         });
 
@@ -67,7 +68,7 @@ public class LoginFragment extends Fragment implements iPresenterUserResponse {
 
     @Override
     public void doSuccess(UserResponse userResponse) {
-        //sessionManager.doCreateSession(userResponse.getUser());
+        sessionManager.doCreateSession(userResponse.getUser());
         Toast.makeText(context, userResponse.getMessage(), Toast.LENGTH_SHORT).show();
         AuthActivity.doChangeActivity(context, MainActivity.class);
     }

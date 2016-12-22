@@ -13,9 +13,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.mvp.ptrade.Model.Adapter.MainPageAdapter;
+import com.mvp.ptrade.Model.SessionManager;
 import com.mvp.ptrade.R;
 
 public class MainActivity extends ParentActivity{
@@ -24,6 +26,8 @@ public class MainActivity extends ParentActivity{
     ActionBarDrawerToggle drawerToggle;
     ImageView nav_profile_pic;
     NavigationView navigation;
+    SessionManager sessionManager;
+    TextView name,email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +39,7 @@ public class MainActivity extends ParentActivity{
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         context = getApplicationContext();
+        sessionManager = new SessionManager(context);
 
         //ViewPager
         initInstanceViewPager();
@@ -42,8 +47,13 @@ public class MainActivity extends ParentActivity{
         //Navigation
         initInstancesNavigation();
 
-        //doChangeActivity(context, AuthActivity.class);
-        //Belum ada session manager
+
+        if (!sessionManager.isUserLoggedIn()) {
+            this.doChangeActivity(context, AuthActivity.class);
+        } else {
+            email.setText(sessionManager.getUserLoggedIn().getEmail());
+            name.setText(sessionManager.getUserLoggedIn().getName());
+        }
     }
 
     private void initInstanceViewPager(){
@@ -119,6 +129,8 @@ public class MainActivity extends ParentActivity{
                 return false;
             }
         });
+        name = (TextView) navigation.getHeaderView(0).findViewById(R.id.nav_header_name);
+        email = (TextView) navigation.getHeaderView(0).findViewById(R.id.nav_header_email);
         nav_profile_pic = (ImageView) navigation.getHeaderView(0).findViewById(R.id.nav_profile_pic);
         nav_profile_pic.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -156,8 +168,13 @@ public class MainActivity extends ParentActivity{
                 //onBackPressed();
                 return true;
             case R.id.autenticationmenu:
-                doChangeActivity(context, AuthActivity.class);
+                //doChangeActivity(context, AuthActivity.class);
                 return true;
+            case R.id.nav_logout:
+                sessionManager.doClearSession();
+                if (!sessionManager.isUserLoggedIn()) {
+                    this.doChangeActivity(context, AuthActivity.class);
+                }
         }
 
         return super.onOptionsItemSelected(item);

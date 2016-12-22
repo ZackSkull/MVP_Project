@@ -24,9 +24,9 @@
                 android:icon="@mipmap/ic_launcher"
                 android:title="@string/navigation_view_item_4" />
             <item
-                android:id="@+id/navigation_item_5"
+                android:id="@+id/nav_logout"
                 android:icon="@mipmap/ic_launcher"
-                android:title="@string/navigation_view_item_5" />
+                android:title="@string/logout" />
         </menu>
     </item>
 </menu>
