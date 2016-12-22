@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Thread extends Model
 {
+    protected $primaryKey = 'trId';
+
     protected $fillable = [
 		'trProdId', 'trUser', 'trUserBuy', 'trStatus', 'trLat', 'trLong'
 	];

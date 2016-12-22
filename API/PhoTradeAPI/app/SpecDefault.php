@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class SpecDefault extends Model
 {
+    protected $primaryKey = 'sdId';
+
     protected $fillable = [
 		'sdGroup', 'sdLabel'
 	];

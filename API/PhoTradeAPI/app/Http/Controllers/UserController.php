@@ -15,16 +15,16 @@ use Auth;
 class UserController extends Controller
 {
     function doRegister (Request $request) {
-    	$_userexist = User::where('email', $request['email'])->get()->first();
-    	if ($_userexist == null) {
-	    	$_userdatas = array(
+    	$_userExist = User::where('email', $request['email'])->get()->first();
+    	if ($_userExist == null) {
+	    	$_userDatas = array(
 	    		'username' => $request['username'],
 	    		'email'    => $request['email'],
 	    		'password' => Hash::make($request['password'])
 	    	);
 
 	    	$_user = new User;
-	    	$_user::create($_userdatas);
+	    	$_user::create($_userDatas);
 
 	    	return response()->json(['message'=> 'Register Success.', 'code'=> '201']);    		
     	} else {
