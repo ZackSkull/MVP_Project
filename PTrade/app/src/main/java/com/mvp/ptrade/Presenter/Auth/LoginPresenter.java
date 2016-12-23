@@ -1,5 +1,7 @@
 package com.mvp.ptrade.Presenter.Auth;
 
+import android.util.Log;
+
 import com.mvp.ptrade.Model.Connections.ConnectionAPI;
 import com.mvp.ptrade.Model.Responses.UserResponse;
 import com.mvp.ptrade.Presenter.iPresenterUserResponse;
@@ -32,10 +34,20 @@ public class LoginPresenter {
         ConnectionAPI.getInstance().getAPIModel().doLogin(_userdatas).enqueue(new Callback<UserResponse>() {
             @Override
             public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
-                if (response.body().getCode().equals("200")) {
-                    loginResponse.doSuccess(response.body());
-                } else {
-                    loginResponse.doFail(response.body().getMessage());
+                Log.d("Call request", call.request().toString());
+                Log.d("Call request header", call.request().headers().toString());
+                Log.d("Response raw header", response.headers().toString());
+                Log.d("Response raw", String.valueOf(response.raw().body()));
+                Log.d("Response code", String.valueOf(response.code()));
+                if (response.body() != null){
+                    if (response.body().getCode().equals("200")) {
+                        loginResponse.doSuccess(response.body());
+                    } else {
+                        loginResponse.doFail(response.body().getMessage());
+                    }
+                }
+                else {
+                    loginResponse.doFail("Response is null");
                 }
             }
 
