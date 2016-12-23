@@ -77,7 +77,7 @@ public class InboxActivity extends ParentActivity{
                 onBackPressed();
                 return true;
             case R.id.autenticationmenu:
-                doChangeActivity(context, AuthActivity.class);
+                //doChangeActivity(context, AuthActivity.class);
                 return true;
         }
 

@@ -51,8 +51,8 @@ public class LoginFragment extends Fragment implements iPresenterUserResponse {
             @Override
             public void onClick(View view) {
                 //percobaan tanpa login
-                //AuthActivity.doChangeActivity(context, MainActivity.class);
-                loginpresenter.doLogin(txtemail.getText().toString(), txtpassword.getText().toString());
+                AuthActivity.doChangeActivity(context, MainActivity.class);
+                //loginpresenter.doLogin(txtemail.getText().toString(), txtpassword.getText().toString());
             }
         });
 
