@@ -6,12 +6,15 @@ package com.mvp.ptrade.Model.Basic;
 
 public class ThreadModel {
     private String id;
-    private String productid;
-    private String user;
-    private String userbuy;
+//    private Product product;
+//    private User userowner;
+//    private User userbuyer;
     private String status;
     private String trlat;
     private String trlong;
+    private String productid;
+    private String user;
+    private String userbuy;
 
     public String getId() {
         return id;

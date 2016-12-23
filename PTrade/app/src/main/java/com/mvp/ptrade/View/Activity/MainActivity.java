@@ -17,8 +17,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.mvp.ptrade.Model.Adapter.MainPageAdapter;
+import com.mvp.ptrade.Model.Basic.FragmentListThread;
 import com.mvp.ptrade.Model.SessionManager;
 import com.mvp.ptrade.R;
+import com.mvp.ptrade.View.Fragment.Tabs.ThreadTabs.TabFragment1;
+import com.mvp.ptrade.View.Fragment.Tabs.ThreadTabs.TabFragment2;
+import com.mvp.ptrade.View.Fragment.Tabs.ThreadTabs.TabFragment3;
 
 public class MainActivity extends ParentActivity{
     Context context;
@@ -28,6 +32,7 @@ public class MainActivity extends ParentActivity{
     NavigationView navigation;
     SessionManager sessionManager;
     TextView name,email;
+    ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,16 +63,19 @@ public class MainActivity extends ParentActivity{
 
     private void initInstanceViewPager(){
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
-        tabLayout.addTab(tabLayout.newTab().setText("Tab 1"));
-        tabLayout.addTab(tabLayout.newTab().setText("Tab 2"));
-        tabLayout.addTab(tabLayout.newTab().setText("Tab 3"));
-        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+//        tabLayout.addTab(tabLayout.newTab().setText("Tab 1"));
+//        tabLayout.addTab(tabLayout.newTab().setText("Tab 2"));
+//        tabLayout.addTab(tabLayout.newTab().setText("Tab 3"));
 
-        final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
-        final MainPageAdapter adapter = new MainPageAdapter
-                (getSupportFragmentManager(), tabLayout.getTabCount());
+        viewPager = (ViewPager) findViewById(R.id.pager);
+        final MainPageAdapter adapter = new MainPageAdapter(getSupportFragmentManager());
+        adapter.addFragment(new FragmentListThread(new TabFragment1(),"Tab 1"));
+        adapter.addFragment(new FragmentListThread(new TabFragment2(),"Tab 2"));
+        adapter.addFragment(new FragmentListThread(new TabFragment3(),"Tab 3"));
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+
+        tabLayout.setupWithViewPager(viewPager);
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
@@ -84,11 +92,11 @@ public class MainActivity extends ParentActivity{
 
             }
         });
+
     }
 
 
     private void initInstancesNavigation() {
-
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawerToggle = new ActionBarDrawerToggle(MainActivity.this, drawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close){
             @Override

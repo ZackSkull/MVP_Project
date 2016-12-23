@@ -40,6 +40,7 @@
                 android:ems="10"
                 android:id="@+id/regis_txtusername"
                 android:hint="@string/Username"
+                android:textColor="@color/White"
                 android:textColorHint="@color/White" />
 
             <EditText
@@ -49,6 +50,7 @@
                 android:ems="10"
                 android:id="@+id/regis_txtemail"
                 android:hint="@string/Email"
+                android:textColor="@color/White"
                 android:textColorHint="@color/White" />
 
             <EditText
@@ -58,6 +60,7 @@
                 android:ems="10"
                 android:id="@+id/regis_txtpassword1"
                 android:hint="@string/Password"
+                android:textColor="@color/White"
                 android:textColorHint="@color/White" />
 
             <EditText
