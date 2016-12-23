@@ -112,7 +112,7 @@ class SpecDefaultController extends Controller
     	if ($_specDefaultExist != null) {
             $_specDefaultExist->delete();
 
-	    	return response()->json(['message'=> 'Update Spec Default Success.', 'code'=> '201']);    		
+	    	return response()->json(['message'=> 'Spec Default has been deleted.', 'code'=> '201']);    		
     	} else {
     		return response()->json(['message'=> 'Sorry, Spec Default not exist.', 'code'=> '401']);
     	}

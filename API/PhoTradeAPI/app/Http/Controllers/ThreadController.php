@@ -123,7 +123,7 @@ class ThreadController extends Controller
     	if ($_threadExist != null) {
             $_threadExist->delete();
 
-	    	return response()->json(['message'=> 'Update Thread Success.', 'code'=> '201']);    		
+	    	return response()->json(['message'=> 'Thread  has been deleted.', 'code'=> '201']);    		
     	} else {
     		return response()->json(['message'=> 'Sorry, Thread not exist.', 'code'=> '401']);
     	}

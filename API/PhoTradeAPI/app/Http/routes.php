@@ -23,16 +23,16 @@ Route::get('product', 'ProductController@index');
 Route::get('product/{id}', 'ProductController@show');
 Route::post('product/store', 'ProductController@store');
 Route::put('product/update/{id}', 'ProductController@update');
-Route::delete('product/delete/{id}', 'ProductController@delete');
+Route::delete('product/delete/{id}', 'ProductController@destroy');
 
 Route::get('thread', 'ThreadController@index');
 Route::get('thread/{id}', 'ThreadController@show');
 Route::post('thread/store', 'ThreadController@store');
 Route::put('thread/update/{id}', 'ThreadController@update');
-Route::delete('thread/delete/{id}', 'ThreadController@delete');
+Route::delete('thread/delete/{id}', 'ThreadController@destroy');
 
 Route::get('spec', 'SpecDefaultController@index');
 Route::get('spec/{id}', 'SpecDefaultController@show');
 Route::post('spec/store', 'SpecDefaultController@store');
 Route::put('spec/update/{id}', 'SpecDefaultController@update');
-Route::delete('spec/delete/{id}', 'SpecDefaultController@delete');
+Route::delete('spec/delete/{id}', 'SpecDefaultController@destroy');

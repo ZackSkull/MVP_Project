@@ -114,7 +114,7 @@ class ProductController extends Controller
     	if ($_productExist != null) {
             $_productExist->delete();
 
-	    	return response()->json(['message'=> 'Update Product Success.', 'code'=> '201']);    		
+	    	return response()->json(['message'=> 'Product has been deleted.', 'code'=> '201']);    		
     	} else {
     		return response()->json(['message'=> 'Sorry, product not exist.', 'code'=> '401']);
     	}
