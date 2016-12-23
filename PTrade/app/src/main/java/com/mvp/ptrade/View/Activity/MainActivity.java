@@ -30,7 +30,7 @@ public class MainActivity extends ParentActivity{
     ActionBarDrawerToggle drawerToggle;
     ImageView nav_profile_pic;
     NavigationView navigation;
-//    SessionManager sessionManager;
+    SessionManager sessionManager;
     TextView name,email;
     ViewPager viewPager;
 
@@ -44,7 +44,7 @@ public class MainActivity extends ParentActivity{
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         context = getApplicationContext();
-//        sessionManager = new SessionManager(context);
+        sessionManager = new SessionManager(context);
 
         //ViewPager
         initInstanceViewPager();
@@ -53,12 +53,18 @@ public class MainActivity extends ParentActivity{
         initInstancesNavigation();
 
 
-//        if (!sessionManager.isUserLoggedIn()) {
-//            this.doChangeActivity(context, AuthActivity.class);
-//        } else {
-//            email.setText(sessionManager.getUserLoggedIn().getEmail());
-//            name.setText(sessionManager.getUserLoggedIn().getName());
-//        }
+        if (!sessionManager.isUserLoggedIn()) {
+            this.doChangeActivity(context, AuthActivity.class);
+        } else {
+            if (sessionManager.getUserLoggedIn() == null) {
+                sessionManager.doClearSession();
+                this.doChangeActivity(context, AuthActivity.class);
+            }
+            else {
+                email.setText(sessionManager.getUserLoggedIn().getEmail());
+                name.setText(sessionManager.getUserLoggedIn().getName());
+            }
+        }
     }
 
     private void initInstanceViewPager(){
@@ -179,10 +185,10 @@ public class MainActivity extends ParentActivity{
                 doChangeActivity(context, AuthActivity.class);
                 return true;
             case R.id.nav_logout:
-//                sessionManager.doClearSession();
-//                if (!sessionManager.isUserLoggedIn()) {
-//                    this.doChangeActivity(context, AuthActivity.class);
-//                }
+                sessionManager.doClearSession();
+                if (!sessionManager.isUserLoggedIn()) {
+                    this.doChangeActivity(context, AuthActivity.class);
+                }
         }
 
         return super.onOptionsItemSelected(item);

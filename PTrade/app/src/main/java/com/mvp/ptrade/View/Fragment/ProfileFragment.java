@@ -30,7 +30,7 @@ public class ProfileFragment extends Fragment implements iPresenterUserResponse 
     Button save, close;
     DatePicker datePicker;
     private String[] array_spinner;
-    //SessionManager sessionManager;
+    SessionManager sessionManager;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -49,7 +49,7 @@ public class ProfileFragment extends Fragment implements iPresenterUserResponse 
         close = (Button) _view.findViewById(R.id.frag_pro_btnclose);
 
         context = getContext();
-        //sessionManager = new SessionManager(context);
+        sessionManager = new SessionManager(context);
 
         //spinner items
         this.array_spinner = new String[]{
@@ -59,7 +59,7 @@ public class ProfileFragment extends Fragment implements iPresenterUserResponse 
         gender.setAdapter(spinneradapter);
 
 
-        //setsession();
+        setsession();
 
         save.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -76,24 +76,24 @@ public class ProfileFragment extends Fragment implements iPresenterUserResponse 
 
         return _view;
     }
-//    private void setsession(){
-//        name.setText(sessionManager.getUserLoggedIn().getName());
-//        username.setText(sessionManager.getUserLoggedIn().getUsername());
-//        email.setText(sessionManager.getUserLoggedIn().getEmail());
-//        city.setText(sessionManager.getUserLoggedIn().getCity());
-//        address.setText(sessionManager.getUserLoggedIn().getAddress());
-//        phone.setText(sessionManager.getUserLoggedIn().getPhone());
-//        bio.setText(sessionManager.getUserLoggedIn().getBio());
-//        date.setText(sessionManager.getUserLoggedIn().getBorndate());
-//        if (sessionManager.getUserLoggedIn().getGender() == true)
-//            gender.setSelection(1);
-//        else
-//            gender.setSelection(2);
-//    }
+    private void setsession(){
+        name.setText(sessionManager.getUserLoggedIn().getName());
+        username.setText(sessionManager.getUserLoggedIn().getUsername());
+        email.setText(sessionManager.getUserLoggedIn().getEmail());
+        city.setText(sessionManager.getUserLoggedIn().getCity());
+        address.setText(sessionManager.getUserLoggedIn().getAddress());
+        phone.setText(sessionManager.getUserLoggedIn().getPhone());
+        bio.setText(sessionManager.getUserLoggedIn().getBio());
+        date.setText(sessionManager.getUserLoggedIn().getBorndate());
+        if (sessionManager.getUserLoggedIn().getGender() == true)
+            gender.setSelection(1);
+        else
+            gender.setSelection(2);
+    }
 
     @Override
     public void doSuccess(UserResponse userResponse) {
-        //sessionManager.doCreateSession(userResponse.getUser());
+        sessionManager.doCreateSession(userResponse.getUser());
         Toast.makeText(context, userResponse.getMessage(), Toast.LENGTH_SHORT).show();
         ProfileActivity.doChangeActivity(context, MainActivity.class);
     }

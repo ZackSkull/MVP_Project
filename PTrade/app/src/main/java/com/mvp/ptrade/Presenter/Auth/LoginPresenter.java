@@ -53,6 +53,10 @@ public class LoginPresenter {
 
             @Override
             public void onFailure(Call<UserResponse> call, Throwable t) {
+                Log.d("Call request", call.request().toString());
+                Log.d("Call request header", call.request().headers().toString());
+                Log.d("Error Message", t.getMessage());
+
                 loginResponse.doConnectionError(R.string.connection_error);
             }
         });

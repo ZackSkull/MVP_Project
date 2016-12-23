@@ -2,6 +2,7 @@ package com.mvp.ptrade.Model;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import com.google.gson.Gson;
 import com.mvp.ptrade.Model.Basic.User;

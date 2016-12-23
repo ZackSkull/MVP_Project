@@ -26,7 +26,7 @@ class UserController extends Controller
 	    	$_user = new User;
 	    	$_user::create($_userDatas);
 
-	    	return response()->json(['message'=> 'Register Success.', 'code'=> '201']);    		
+	    	return response()->json(['message'=> 'Register Success.', 'code'=> '201', 'user'=> $_user]);    		
     	} else {
     		return response()->json(['message'=> 'Sorry, email already exist.', 'code'=> '401']);
     	}
@@ -39,7 +39,13 @@ class UserController extends Controller
     	);
 
     	if(Auth::attempt($_userdatas))
-    		return response()->json(['message'=> 'Login Success', 'code'=> '200']);
+		{
+			$_userExist = User::where('email', $request['email'])->get()->first();
+			if ($_userExist != null)
+			{
+    			return response()->json(['message'=> 'Login Success', 'code'=> '200', 'user'=> $_userExist]);
+			}
+		}
     	return response()->json(['message'=> 'Email and password does not match.', 'code'=> '401']);
 
     }
