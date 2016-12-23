@@ -41,6 +41,7 @@
                 android:ems="10"
                 android:id="@+id/login_txtemail"
                 android:hint="@string/Email"
+                android:textColor="@color/White"
                 android:textColorHint="@color/White"
                 android:textAlignment="center" />
 
@@ -52,6 +53,7 @@
                 android:ems="10"
                 android:id="@+id/login_txtpassword"
                 android:hint="@string/Password"
+                android:textColor="@color/White"
                 android:textColorHint="@color/White"
                 android:textAlignment="center" />
 
