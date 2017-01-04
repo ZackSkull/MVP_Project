@@ -70,6 +70,7 @@
                 android:ems="10"
                 android:id="@+id/regis_txtpassword2"
                 android:hint="@string/RPassword"
+                android:textColor="@color/White"
                 android:textColorHint="@color/White" />
 
             <Button

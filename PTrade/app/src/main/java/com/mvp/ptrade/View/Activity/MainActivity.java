@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.mvp.ptrade.Model.SessionManager;
 import com.mvp.ptrade.R;
+import com.mvp.ptrade.View.Fragment.Tabs.InboxTabs.MailViewPagerFragment;
 import com.mvp.ptrade.View.Fragment.Tabs.ThreadTabs.ThreadViewPagerFragment;
 
 public class MainActivity extends ParentActivity{
@@ -89,9 +90,10 @@ public class MainActivity extends ParentActivity{
                     case R.id.navigation_item_2:
                         Toast.makeText(context, R.string.navigation_view_item_2, Toast.LENGTH_SHORT).show();
                         break;
-                    case R.id.nav_item_inbox:
-                        doChangeActivity(context, InboxActivity.class);
-                        //Toast.makeText(context, R.string.Inbox, Toast.LENGTH_SHORT).show();
+                    case R.id.nav_item_mail:
+                        doChangeContentFragment(new MailViewPagerFragment());
+//                        doChangeActivity(context, InboxActivity.class);
+//                        Toast.makeText(context, R.string.Inbox, Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.navigation_item_4:
                         Toast.makeText(context, R.string.navigation_view_item_4, Toast.LENGTH_SHORT).show();

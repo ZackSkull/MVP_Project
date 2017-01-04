@@ -16,9 +16,9 @@
         android:title="@string/navigation_view_category_2">
         <menu>
             <item
-                android:id="@+id/nav_item_inbox"
+                android:id="@+id/nav_item_mail"
                 android:icon="@mipmap/ic_launcher"
-                android:title="@string/Inbox" />
+                android:title="@string/mail" />
             <item
                 android:id="@+id/navigation_item_4"
                 android:icon="@mipmap/ic_launcher"

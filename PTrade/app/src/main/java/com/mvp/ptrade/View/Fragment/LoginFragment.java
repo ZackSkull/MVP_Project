@@ -69,7 +69,7 @@ public class LoginFragment extends Fragment implements iPresenterUserResponse {
 
     @Override
     public void doSuccess(UserResponse userResponse) {
-        Log.d("Call request", userResponse.toString());
+//        Log.d("Call request", userResponse.toString());
         sessionManager.doCreateSession(userResponse.getUser());
         Toast.makeText(context, userResponse.getMessage(), Toast.LENGTH_SHORT).show();
         AuthActivity.doChangeActivity(context, MainActivity.class);
