@@ -77,15 +77,20 @@ public class ProfileFragment extends Fragment implements iPresenterUserResponse 
         return _view;
     }
     private void setsession(){
-        name.setText(sessionManager.getUserLoggedIn().getName());
+        name.setText(sessionManager.getUserLoggedIn().getUsername());
         username.setText(sessionManager.getUserLoggedIn().getUsername());
         email.setText(sessionManager.getUserLoggedIn().getEmail());
-        city.setText(sessionManager.getUserLoggedIn().getCity());
-        address.setText(sessionManager.getUserLoggedIn().getAddress());
-        phone.setText(sessionManager.getUserLoggedIn().getPhone());
-        bio.setText(sessionManager.getUserLoggedIn().getBio());
-        date.setText(sessionManager.getUserLoggedIn().getBorndate());
-        if (sessionManager.getUserLoggedIn().getGender() == true)
+        if (sessionManager.getUserLoggedIn().getCity() != null)
+            city.setText(sessionManager.getUserLoggedIn().getCity());
+        if (sessionManager.getUserLoggedIn().getAddress() != null)
+            address.setText(sessionManager.getUserLoggedIn().getAddress());
+        if (sessionManager.getUserLoggedIn().getPhone() != null)
+            phone.setText(sessionManager.getUserLoggedIn().getPhone());
+        if (sessionManager.getUserLoggedIn().getBio() != null)
+            bio.setText(sessionManager.getUserLoggedIn().getBio());
+        if (sessionManager.getUserLoggedIn().getBorndate() != null)
+            date.setText(sessionManager.getUserLoggedIn().getBorndate());
+        if ((sessionManager.getUserLoggedIn().getGender() == true))
             gender.setSelection(1);
         else
             gender.setSelection(2);

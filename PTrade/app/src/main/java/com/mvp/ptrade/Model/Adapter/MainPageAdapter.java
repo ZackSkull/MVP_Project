@@ -11,9 +11,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.mvp.ptrade.Model.Basic.FragmentListThread;
-import com.mvp.ptrade.View.Fragment.Tabs.ThreadTabs.TabFragment1;
-import com.mvp.ptrade.View.Fragment.Tabs.ThreadTabs.TabFragment2;
-import com.mvp.ptrade.View.Fragment.Tabs.ThreadTabs.TabFragment3;
 
 import java.util.ArrayList;
 import java.util.List;

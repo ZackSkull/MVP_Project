@@ -11,11 +11,9 @@ import java.util.List;
 
 public class ThreadResponse extends Response {
     private List<ThreadModel> threads;
-
     public List<ThreadModel> getThreads() {
         return threads;
     }
-
     public void setThreads(List<ThreadModel> threads) {
         this.threads = threads;
     }

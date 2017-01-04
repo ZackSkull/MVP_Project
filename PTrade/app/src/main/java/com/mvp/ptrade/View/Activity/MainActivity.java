@@ -3,8 +3,7 @@ package com.mvp.ptrade.View.Activity;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
+import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.os.Bundle;
@@ -16,13 +15,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.mvp.ptrade.Model.Adapter.MainPageAdapter;
-import com.mvp.ptrade.Model.Basic.FragmentListThread;
 import com.mvp.ptrade.Model.SessionManager;
 import com.mvp.ptrade.R;
-import com.mvp.ptrade.View.Fragment.Tabs.ThreadTabs.TabFragment1;
-import com.mvp.ptrade.View.Fragment.Tabs.ThreadTabs.TabFragment2;
-import com.mvp.ptrade.View.Fragment.Tabs.ThreadTabs.TabFragment3;
+import com.mvp.ptrade.View.Fragment.Tabs.ThreadTabs.ThreadViewPagerFragment;
 
 public class MainActivity extends ParentActivity{
     Context context;
@@ -32,7 +27,6 @@ public class MainActivity extends ParentActivity{
     NavigationView navigation;
     SessionManager sessionManager;
     TextView name,email;
-    ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +41,7 @@ public class MainActivity extends ParentActivity{
         sessionManager = new SessionManager(context);
 
         //ViewPager
-        initInstanceViewPager();
+        doChangeContentFragment(new ThreadViewPagerFragment());
 
         //Navigation
         initInstancesNavigation();
@@ -66,41 +60,6 @@ public class MainActivity extends ParentActivity{
             }
         }
     }
-
-    private void initInstanceViewPager(){
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
-//        tabLayout.addTab(tabLayout.newTab().setText("Tab 1"));
-//        tabLayout.addTab(tabLayout.newTab().setText("Tab 2"));
-//        tabLayout.addTab(tabLayout.newTab().setText("Tab 3"));
-
-        viewPager = (ViewPager) findViewById(R.id.pager);
-        final MainPageAdapter adapter = new MainPageAdapter(getSupportFragmentManager());
-        adapter.addFragment(new FragmentListThread(new TabFragment1(),"Tab 1"));
-        adapter.addFragment(new FragmentListThread(new TabFragment2(),"Tab 2"));
-        adapter.addFragment(new FragmentListThread(new TabFragment3(),"Tab 3"));
-        viewPager.setAdapter(adapter);
-        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-
-        tabLayout.setupWithViewPager(viewPager);
-        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                viewPager.setCurrentItem(tab.getPosition());
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });
-
-    }
-
 
     private void initInstancesNavigation() {
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -123,8 +82,9 @@ public class MainActivity extends ParentActivity{
             public boolean onNavigationItemSelected(MenuItem menuItem) {
                 int id = menuItem.getItemId();
                 switch (id) {
-                    case R.id.navigation_item_1:
-                        Toast.makeText(context, R.string.navigation_view_item_1, Toast.LENGTH_SHORT).show();
+                    case R.id.main:
+                        doChangeContentFragment(new ThreadViewPagerFragment());
+//                        Toast.makeText(context, R.string.main, Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.navigation_item_2:
                         Toast.makeText(context, R.string.navigation_view_item_2, Toast.LENGTH_SHORT).show();
@@ -176,6 +136,9 @@ public class MainActivity extends ParentActivity{
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.main:
+
+                return true;
             case android.R.id.home:
                 //View decorview = getWindow().getDecorView();
                 //decorview.setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION|View.SYSTEM_UI_FLAG_FULLSCREEN);
@@ -192,5 +155,9 @@ public class MainActivity extends ParentActivity{
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void doChangeContentFragment(Fragment fragment) {
+        getSupportFragmentManager().beginTransaction().replace(R.id.contentlayout, fragment).commit();
     }
 }
