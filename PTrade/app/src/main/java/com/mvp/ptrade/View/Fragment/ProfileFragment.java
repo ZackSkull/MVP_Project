@@ -94,16 +94,6 @@ public class ProfileFragment extends Fragment implements iPresenterUserResponse 
         return _view;
     }
     private void setsession(){
-//<<<<<<< HEAD
-//        Log.d("Name:", String.valueOf(sessionManager.getUserLoggedIn().getName()));
-//        Log.d("Username:", String.valueOf(sessionManager.getUserLoggedIn().getUsername()));
-//        Log.d("Email:", String.valueOf(sessionManager.getUserLoggedIn().getEmail()));
-//        Log.d("City:", String.valueOf(sessionManager.getUserLoggedIn().getCity()));
-//        Log.d("Address:", String.valueOf(sessionManager.getUserLoggedIn().getAddress()));
-//        Log.d("Phone:", String.valueOf(sessionManager.getUserLoggedIn().getPhone()));
-//        Log.d("Bio:", String.valueOf(sessionManager.getUserLoggedIn().getBio()));
-//        Log.d("Date:", String.valueOf(sessionManager.getUserLoggedIn().getBorndate()));
-//
         name.setText(String.valueOf(sessionManager.getUserLoggedIn().getName()));
         username.setText(sessionManager.getUserLoggedIn().getUsername());
         email.setText(String.valueOf(sessionManager.getUserLoggedIn().getEmail()));
@@ -111,42 +101,7 @@ public class ProfileFragment extends Fragment implements iPresenterUserResponse 
         address.setText(String.valueOf(sessionManager.getUserLoggedIn().getAddress()));
         phone.setText(String.valueOf(sessionManager.getUserLoggedIn().getPhone()));
         bio.setText(String.valueOf(sessionManager.getUserLoggedIn().getBio()));
-//        date.setText(String.valueOf(sessionManager.getUserLoggedIn().getBorndate()));
-//        SimpleDateFormat _df = new SimpleDateFormat("MM/dd/yyyy hh:mm:ss aa");
-//        Date _d = new Date();
-//        Calendar _cal = new Calendar.getInstance();
-//
-//
-//        try {
-//            _d = _df.parse(String.valueOf(sessionManager.getUserLoggedIn().getBorndate()));
-//            _cal.setTime(_d);
-//        } catch (ParseException _e){
-//            _e.printStackTrace();
-//        }
-//
-//        datePicker.init(_cal.YEAR, _cal.MONTH, _cal.DATE, null);
         gender.setSelection(sessionManager.getUserLoggedIn().getGender());
-//        if (sessionManager.getUserLoggedIn().getGender() == 1)
-//=======
-//        if (sessionManager.getUserLoggedIn().getName() != null)
-//            name.setText(sessionManager.getUserLoggedIn().getName());
-//        username.setText(sessionManager.getUserLoggedIn().getUsername());
-//        email.setText(sessionManager.getUserLoggedIn().getEmail());
-//        if (sessionManager.getUserLoggedIn().getCity() != null)
-//            city.setText(sessionManager.getUserLoggedIn().getCity());
-//        if (sessionManager.getUserLoggedIn().getAddress() != null)
-//            address.setText(sessionManager.getUserLoggedIn().getAddress());
-//        if (sessionManager.getUserLoggedIn().getPhone() != null)
-//            phone.setText(sessionManager.getUserLoggedIn().getPhone());
-//        if (sessionManager.getUserLoggedIn().getBio() != null)
-//            bio.setText(sessionManager.getUserLoggedIn().getBio());
-//        if (sessionManager.getUserLoggedIn().getBorndate() != null)
-//            date.setText(sessionManager.getUserLoggedIn().getBorndate());
-//        if (sessionManager.getUserLoggedIn().getGender() == 1)
-//>>>>>>> 748d713305932df87d0eab74862a5d428eb3e18f
-//            gender.setSelection(0);
-//        else
-//            gender.setSelection(1);
     }
 
     @Override
