@@ -14,7 +14,7 @@ import com.mvp.ptrade.R;
  * Created by Zackzack on 22/12/2016.
  */
 
-public class ThreadFragment extends Fragment {
+public class ThreadCardFragment extends Fragment {
     ImageView threadimg;
     TextView name,desc;
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

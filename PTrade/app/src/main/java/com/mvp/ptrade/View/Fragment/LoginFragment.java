@@ -36,7 +36,6 @@ public class LoginFragment extends Fragment implements iPresenterUserResponse {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
         View _view = inflater.inflate(R.layout.fragment_login, container, false);
 
         txtredirectregister = (TextView) _view.findViewById(R.id.login_txtregister);
