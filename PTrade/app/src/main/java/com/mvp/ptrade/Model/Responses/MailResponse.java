@@ -12,7 +12,6 @@ public class MailResponse extends Response {
     public Mail getMail() {
         return mail;
     }
-
     public void setMail(Mail mail) {
         this.mail = mail;
     }

@@ -34,29 +34,28 @@ public class LoginPresenter {
         ConnectionAPI.getInstance().getAPIModel().doLogin(_userdatas).enqueue(new Callback<UserResponse>() {
             @Override
             public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
-                Log.d("Call request", call.request().toString());
-                Log.d("Call request header", call.request().headers().toString());
-                Log.d("Response raw header", response.headers().toString());
-                Log.d("Response raw", String.valueOf(response.raw().body()));
-                Log.d("Response code", String.valueOf(response.code()));
-                if (response.body() != null){
+//                Log.d("Call request", call.request().toString());
+//                Log.d("Call request header", call.request().headers().toString());
+//                Log.d("Response raw header", response.headers().toString());
+//                Log.d("Response raw", String.valueOf(response.raw().body()));
+//                Log.d("Response code", String.valueOf(response.code()));
+//                if (response.body() != null){
                     if (response.body().getCode().equals("200")) {
                         loginResponse.doSuccess(response.body());
                     } else {
                         loginResponse.doFail(response.body().getMessage());
                     }
-                }
-                else {
-                    loginResponse.doFail("Response is null");
-                }
+//                }
+//                else {
+//                    loginResponse.doFail("Response is null");
+//                }
             }
 
             @Override
             public void onFailure(Call<UserResponse> call, Throwable t) {
-                Log.d("Call request", call.request().toString());
-                Log.d("Call request header", call.request().headers().toString());
-                Log.d("Error Message", t.getMessage());
-
+//                Log.d("Call request", call.request().toString());
+//                Log.d("Call request header", call.request().headers().toString());
+//                Log.d("Error Message", t.getMessage());
                 loginResponse.doConnectionError(R.string.connection_error);
             }
         });

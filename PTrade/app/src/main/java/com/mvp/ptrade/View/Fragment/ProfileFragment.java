@@ -78,6 +78,7 @@ public class ProfileFragment extends Fragment implements iPresenterUserResponse 
         return _view;
     }
     private void setsession(){
+//<<<<<<< HEAD
         Log.d("Name:", sessionManager.getUserLoggedIn().getName());
         Log.d("Username:", sessionManager.getUserLoggedIn().getUsername());
         Log.d("Email:", sessionManager.getUserLoggedIn().getEmail());
@@ -96,6 +97,22 @@ public class ProfileFragment extends Fragment implements iPresenterUserResponse 
         bio.setText(sessionManager.getUserLoggedIn().getBio());
         date.setText(sessionManager.getUserLoggedIn().getBorndate());
         if (sessionManager.getUserLoggedIn().getGender() == 1)
+//=======
+//        name.setText(sessionManager.getUserLoggedIn().getUsername());
+//        username.setText(sessionManager.getUserLoggedIn().getUsername());
+//        email.setText(sessionManager.getUserLoggedIn().getEmail());
+//        if (sessionManager.getUserLoggedIn().getCity() != null)
+//            city.setText(sessionManager.getUserLoggedIn().getCity());
+//        if (sessionManager.getUserLoggedIn().getAddress() != null)
+//            address.setText(sessionManager.getUserLoggedIn().getAddress());
+//        if (sessionManager.getUserLoggedIn().getPhone() != null)
+//            phone.setText(sessionManager.getUserLoggedIn().getPhone());
+//        if (sessionManager.getUserLoggedIn().getBio() != null)
+//            bio.setText(sessionManager.getUserLoggedIn().getBio());
+//        if (sessionManager.getUserLoggedIn().getBorndate() != null)
+//            date.setText(sessionManager.getUserLoggedIn().getBorndate());
+//        if ((sessionManager.getUserLoggedIn().getGender() == true))
+//>>>>>>> 748d713305932df87d0eab74862a5d428eb3e18f
             gender.setSelection(1);
         else
             gender.setSelection(2);

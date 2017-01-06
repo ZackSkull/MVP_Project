@@ -5,22 +5,18 @@ package com.mvp.ptrade.Model.Adapter;
  */
 
 
-import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.mvp.ptrade.Model.Basic.FragmentListThread;
-import com.mvp.ptrade.View.Fragment.Tabs.ThreadTabs.TabFragment1;
-import com.mvp.ptrade.View.Fragment.Tabs.ThreadTabs.TabFragment2;
-import com.mvp.ptrade.View.Fragment.Tabs.ThreadTabs.TabFragment3;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainPageAdapter extends FragmentPagerAdapter {
+public class PageAdapter extends FragmentPagerAdapter {
     private List<FragmentListThread> fragments;
-    public MainPageAdapter(FragmentManager fm) {
+    public PageAdapter(FragmentManager fm) {
         super(fm);
         fragments = new ArrayList<>();
     }

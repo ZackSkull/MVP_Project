@@ -1,10 +1,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="all">
         <item
-            android:id="@+id/navigation_item_1"
+            android:id="@+id/main"
             android:checked="true"
             android:icon="@mipmap/ic_launcher"
-            android:title="@string/navigation_view_item_1" />
+            android:title="@string/main" />
         <item
             android:id="@+id/navigation_item_2"
             android:icon="@mipmap/ic_launcher"
@@ -16,9 +16,9 @@
         android:title="@string/navigation_view_category_2">
         <menu>
             <item
-                android:id="@+id/nav_item_inbox"
+                android:id="@+id/nav_item_mail"
                 android:icon="@mipmap/ic_launcher"
-                android:title="@string/Inbox" />
+                android:title="@string/mail" />
             <item
                 android:id="@+id/navigation_item_4"
                 android:icon="@mipmap/ic_launcher"

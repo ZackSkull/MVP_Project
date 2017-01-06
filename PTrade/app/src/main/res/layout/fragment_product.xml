@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="10dp">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -54,9 +55,9 @@
                             android:id="@+id/frag_product_jaringan"
                             android:textAlignment="center" />
 
-                        <ListView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
+                        <!--<ListView-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="match_parent" />-->
                     </LinearLayout>
 
                     <LinearLayout
@@ -71,10 +72,6 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/frag_product_dimensi"
                             android:textAlignment="center" />
-
-                        <ListView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -89,10 +86,6 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/frag_product_layar"
                             android:textAlignment="center" />
-
-                        <ListView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -107,10 +100,6 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/frag_product_softhard"
                             android:textAlignment="center" />
-
-                        <ListView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -125,10 +114,6 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/frag_product_kamera"
                             android:textAlignment="center" />
-
-                        <ListView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -143,10 +128,6 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/frag_product_memori"
                             android:textAlignment="center" />
-
-                        <ListView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -161,10 +142,6 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/frag_product_koneksi"
                             android:textAlignment="center" />
-
-                        <ListView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -180,9 +157,6 @@
                             android:id="@+id/frag_product_sensor"
                             android:textAlignment="center" />
 
-                        <ListView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -198,9 +172,6 @@
                             android:id="@+id/frag_product_baterai"
                             android:textAlignment="center" />
 
-                        <ListView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -224,6 +195,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView5" />
+
+                <TextView
+                    android:text="TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView6" />
+
+                <Button
+                    android:text="Trade Offer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

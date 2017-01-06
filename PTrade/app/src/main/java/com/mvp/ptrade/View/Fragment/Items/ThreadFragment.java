@@ -17,7 +17,6 @@ import com.mvp.ptrade.R;
 public class ThreadFragment extends Fragment {
     ImageView threadimg;
     TextView name,desc;
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.item_thread, container, false);
         name = (TextView) view.findViewById(R.id.trditem_textname);
