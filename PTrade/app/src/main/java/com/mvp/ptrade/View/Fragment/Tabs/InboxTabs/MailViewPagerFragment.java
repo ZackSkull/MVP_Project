@@ -25,7 +25,7 @@ public class MailViewPagerFragment extends Fragment{
         TabLayout tabLayout = (TabLayout) _view.findViewById(R.id.tab_layout);
 //        tabLayout.addTab(tabLayout.newTab().setText("Inbox"));
 //        tabLayout.addTab(tabLayout.newTab().setText("Send"));
-        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+//        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         final ViewPager viewPager = (ViewPager) _view.findViewById(R.id.pager);
         final PageAdapter adapter = new PageAdapter(getFragmentManager());
@@ -33,6 +33,7 @@ public class MailViewPagerFragment extends Fragment{
         adapter.addFragment(new FragmentListThread(new TabFragmentSend(), "Send"));
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        tabLayout.setupWithViewPager(viewPager);
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
