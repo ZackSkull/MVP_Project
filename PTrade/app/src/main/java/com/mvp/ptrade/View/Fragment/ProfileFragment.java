@@ -36,7 +36,7 @@ public class ProfileFragment extends Fragment implements iPresenterUserResponse 
     EditText name,username,email,city,address,phone,bio,date;
     Spinner gender;
     Context context;
-    Button save, close;
+    Button save, close, changepass;
 //    DatePicker datePicker;
     private String[] array_spinner;
     SessionManager sessionManager;
@@ -56,6 +56,7 @@ public class ProfileFragment extends Fragment implements iPresenterUserResponse 
 //        date = (EditText) _view.findViewById(R.id.frag_pro_date);
 //        datePicker = (DatePicker) _view.findViewById(R.id.frag_pro_date);
         save = (Button) _view.findViewById(R.id.frag_pro_btnsave);
+        changepass = (Button) _view.findViewById(R.id.frag_pro_btncngpass);
         close = (Button) _view.findViewById(R.id.frag_pro_btnclose);
 
         context = getContext();
@@ -75,6 +76,12 @@ public class ProfileFragment extends Fragment implements iPresenterUserResponse 
             @Override
             public void onClick(View v) {
 
+            }
+        });
+        changepass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                doChangeFragment(new ChangepassFragment());
             }
         });
         close.setOnClickListener(new View.OnClickListener() {
@@ -157,5 +164,9 @@ public class ProfileFragment extends Fragment implements iPresenterUserResponse 
     @Override
     public void doConnectionError(int message) {
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
+    }
+
+    public void doChangeFragment(Fragment fragment) {
+        getFragmentManager().beginTransaction().replace(R.id.frag_pro, fragment).commit();
     }
 }

@@ -149,9 +149,9 @@ public class MainActivity extends ParentActivity{
                 //decorview.setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION|View.SYSTEM_UI_FLAG_FULLSCREEN);
                 //onBackPressed();
                 return true;
-            case R.id.autenticationmenu:
-                doChangeActivity(context, AuthActivity.class);
-                return true;
+//            case R.id.autenticationmenu:
+//                doChangeActivity(context, AuthActivity.class);
+//                return true;
             case R.id.nav_logout:
                 sessionManager.doClearSession();
                 if (!sessionManager.isUserLoggedIn()) {

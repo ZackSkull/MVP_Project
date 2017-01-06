@@ -15,6 +15,7 @@
     <string name="Email">Email</string>
     <string name="Password">Password</string>
     <string name="RPassword">Re-Password</string>
+    <string name="NPassword">New-Password</string>
     <string name="Gender">Gender</string>
     <string name="Register">Register</string>
     <string name="Login">Login</string>
@@ -48,6 +49,7 @@
     <string name="navigation_view_category_2">Navigation View Category</string>
 
     <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
     <string name="close">Close</string>
     <string name="send">Send</string>
     <string name="subject">Subject</string>
