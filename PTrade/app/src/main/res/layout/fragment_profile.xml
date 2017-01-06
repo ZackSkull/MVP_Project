@@ -12,7 +12,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp">
 
             <ImageView
                 android:layout_width="match_parent"
@@ -31,151 +33,261 @@
                 android:textAlignment="center" />
 
             <LinearLayout
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_height="match_parent"
-                    android:layout_width="150dp">
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-                    <TextView
-                        android:text="@string/Username"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:padding="10dp"
-                        android:id="@+id/frag_pro_username_label"
-                        android:textSize="18sp" />
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_height="match_parent"
+                        android:layout_width="150dp">
 
-                    <TextView
-                        android:text="@string/Email"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:padding="10dp"
-                        android:id="@+id/frag_pro_email_label"
-                        android:textSize="18sp" />
+                        <TextView
+                            android:text="@string/Username"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:id="@+id/frag_pro_username_label"
+                            android:textSize="18sp" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:padding="10dp"
-                        android:id="@+id/frag_pro_label_city"
-                        android:textSize="18sp"
-                        android:text="@string/KLahir" />
+                    </LinearLayout>
 
-                    <TextView
-                        android:text="@string/Alamat"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:padding="10dp"
-                        android:id="@+id/frag_pro_label_Address"
-                        android:textSize="18sp" />
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent">
 
-                    <TextView
-                        android:text="@string/Gender"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:padding="10dp"
-                        android:id="@+id/frag_pro_label_gender"
-                        android:textSize="18sp" />
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPersonName"
+                            android:ems="10"
+                            android:id="@+id/frag_pro_username" />
 
-                    <TextView
-                        android:text="@string/TLahir"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:padding="10dp"
-                        android:id="@+id/frag_pro_label_ttl"
-                        android:textSize="18sp" />
+                    </LinearLayout>
 
-                    <TextView
-                        android:text="@string/Telphone"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:padding="10dp"
-                        android:id="@+id/frag_pro_label_phone"
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:text="@string/Bio"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:padding="10dp"
-                        android:id="@+id/frag_pro_label_bio"
-                        android:textSize="18sp" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:orientation="vertical"
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="wrap_content">
 
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:inputType="textPersonName"
-                        android:ems="10"
-                        android:id="@+id/frag_pro_username" />
-
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:inputType="textPersonName"
-                        android:ems="10"
-                        android:id="@+id/frag_pro_email" />
-
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:inputType="textPersonName"
-                        android:ems="10"
-                        android:id="@+id/frag_pro_kota" />
-
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:inputType="textPersonName"
-                        android:ems="10"
-                        android:id="@+id/frag_pro_address" />
-
-                    <Spinner
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:id="@+id/frag_pro_spinner_gender"
-                        />
-
-                    <DatePicker
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:ems="10"
-                        android:id="@+id/frag_pro_date"
-                        ></DatePicker>
-                    <!--<EditText-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="40dp"-->
-                        <!--android:inputType="textPersonName"-->
-                        <!--android:ems="10"-->
-                        <!--android:id="@+id/frag_pro_date"-->
-                        <!--android:focusable="false"-->
-                        <!--android:focusableInTouchMode="false"-->
-                        <!--android:cursorVisible="false"-->
-                        <!--android:onClick="SetDate"/>-->
-
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:inputType="textPersonName"
-                        android:ems="10"
-                        android:id="@+id/frag_pro_phone" />
-
-                    <EditText
-                        android:layout_width="match_parent"
+                    <LinearLayout
+                        android:orientation="vertical"
                         android:layout_height="match_parent"
-                        android:inputType="textMultiLine"
-                        android:ems="10"
-                        android:id="@+id/frag_pro_bio" />
+                        android:layout_width="150dp">
+
+                        <TextView
+                            android:text="@string/Email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:id="@+id/frag_pro_email_label"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent">
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPersonName"
+                            android:ems="10"
+                            android:id="@+id/frag_pro_email" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_height="match_parent"
+                        android:layout_width="150dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:id="@+id/frag_pro_label_city"
+                            android:textSize="18sp"
+                            android:text="@string/KLahir" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent">
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPersonName"
+                            android:ems="10"
+                            android:id="@+id/frag_pro_kota" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_height="match_parent"
+                        android:layout_width="150dp">
+
+                        <TextView
+                            android:text="@string/Alamat"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:id="@+id/frag_pro_label_Address"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent">
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPersonName"
+                            android:ems="10"
+                            android:id="@+id/frag_pro_address" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_height="match_parent"
+                        android:layout_width="150dp">
+
+                        <TextView
+                            android:text="@string/Gender"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:id="@+id/frag_pro_label_gender"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent">
+
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/frag_pro_spinner_gender"
+                            />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_height="match_parent"
+                        android:layout_width="150dp">
+
+                        <TextView
+                            android:text="@string/Telphone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:id="@+id/frag_pro_label_phone"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent">
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPersonName"
+                            android:ems="10"
+                            android:id="@+id/frag_pro_phone" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_height="match_parent"
+                        android:layout_width="150dp">
+
+                        <TextView
+                            android:text="@string/Bio"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:id="@+id/frag_pro_label_bio"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent">
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:inputType="textMultiLine"
+                            android:ems="10"
+                            android:id="@+id/frag_pro_bio" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
             </LinearLayout>
 
             <Button

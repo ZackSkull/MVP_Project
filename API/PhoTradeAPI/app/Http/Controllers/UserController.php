@@ -49,4 +49,27 @@ class UserController extends Controller
     	return response()->json(['message'=> 'Email and password does not match.', 'code'=> '401']);
 
     }
+
+	function doUpdate (Request $request) {
+    	
+		$_userExist = User::where('email', $request['email'])->get()->first();
+		if ($_userExist != null)
+		{
+			$_user = new User();
+			$_user = $_userExist::Update([
+				'username' => $request['username'],
+				'name' => $request['name'],
+				'email'    => $request['email'],
+				'city' => $request['city'],
+				'address' => $request['address'],
+				'phone' => $request['phone'],
+				'bio' => $request['bio'],
+				'gender' => $request['gender']
+			]);
+			
+			return response()->json(['message'=> 'Update Success', 'code'=> '200', 'user'=> $_userExist]);
+		}
+    	return response()->json(['message'=> 'No data found.', 'code'=> '401']);
+
+    }
 }
