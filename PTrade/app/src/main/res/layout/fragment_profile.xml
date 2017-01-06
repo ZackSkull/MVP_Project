@@ -144,16 +144,22 @@
                         android:id="@+id/frag_pro_spinner_gender"
                         />
 
-                    <EditText
+                    <DatePicker
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
-                        android:inputType="textPersonName"
                         android:ems="10"
                         android:id="@+id/frag_pro_date"
-                        android:focusable="false"
-                        android:focusableInTouchMode="false"
-                        android:cursorVisible="false"
-                        android:onClick="SetDate"/>
+                        ></DatePicker>
+                    <!--<EditText-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="40dp"-->
+                        <!--android:inputType="textPersonName"-->
+                        <!--android:ems="10"-->
+                        <!--android:id="@+id/frag_pro_date"-->
+                        <!--android:focusable="false"-->
+                        <!--android:focusableInTouchMode="false"-->
+                        <!--android:cursorVisible="false"-->
+                        <!--android:onClick="SetDate"/>-->
 
                     <EditText
                         android:layout_width="match_parent"
