@@ -137,7 +137,10 @@ public class MainActivity extends ParentActivity{
                         Toast.makeText(context, R.string.navigation_view_item_4, Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.nav_logout:
-                        Toast.makeText(context, R.string.logout, Toast.LENGTH_SHORT).show();
+                        sessionManager.doClearSession();
+                        if (!sessionManager.isUserLoggedIn()) {
+                            doChangeActivity(context, AuthActivity.class);
+                        }
                         break;
                 }
                 return false;

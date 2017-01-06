@@ -23,8 +23,8 @@ class UserController extends Controller
 	    		'password' => Hash::make($request['password'])
 	    	);
 
-	    	$_user = new User;
-	    	$_user::create($_userDatas);
+			$_user = new User();
+	    	$_user = User::create($_userDatas);
 
 	    	return response()->json(['message'=> 'Register Success.', 'code'=> '201', 'user'=> $_user]);    		
     	} else {

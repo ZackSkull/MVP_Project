@@ -2,6 +2,7 @@ package com.mvp.ptrade.View.Fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -77,6 +78,15 @@ public class ProfileFragment extends Fragment implements iPresenterUserResponse 
         return _view;
     }
     private void setsession(){
+        Log.d("Name:", sessionManager.getUserLoggedIn().getName());
+        Log.d("Username:", sessionManager.getUserLoggedIn().getUsername());
+        Log.d("Email:", sessionManager.getUserLoggedIn().getEmail());
+        Log.d("City:", sessionManager.getUserLoggedIn().getCity());
+        Log.d("Address:", sessionManager.getUserLoggedIn().getAddress());
+        Log.d("Phone:", sessionManager.getUserLoggedIn().getPhone());
+        Log.d("Bio:", sessionManager.getUserLoggedIn().getBio());
+        Log.d("Date:", sessionManager.getUserLoggedIn().getBorndate());
+
         name.setText(sessionManager.getUserLoggedIn().getName());
         username.setText(sessionManager.getUserLoggedIn().getUsername());
         email.setText(sessionManager.getUserLoggedIn().getEmail());
@@ -85,7 +95,7 @@ public class ProfileFragment extends Fragment implements iPresenterUserResponse 
         phone.setText(sessionManager.getUserLoggedIn().getPhone());
         bio.setText(sessionManager.getUserLoggedIn().getBio());
         date.setText(sessionManager.getUserLoggedIn().getBorndate());
-        if (sessionManager.getUserLoggedIn().getGender() == true)
+        if (sessionManager.getUserLoggedIn().getGender() == 1)
             gender.setSelection(1);
         else
             gender.setSelection(2);
