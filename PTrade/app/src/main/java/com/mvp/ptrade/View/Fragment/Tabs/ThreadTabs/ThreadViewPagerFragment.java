@@ -29,7 +29,6 @@ public class ThreadViewPagerFragment extends Fragment{
         adapter.addFragment(new FragmentListThread(new TabFragment3(),"Tab 3"));
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
