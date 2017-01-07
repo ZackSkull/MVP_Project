@@ -60,9 +60,9 @@ public class ProfileFragment extends Fragment implements iPresenterUserResponse 
         this.array_spinner = new String[]{
                 "Pria","Wanita"
         };
+
         ArrayAdapter<String> spinneradapter = new ArrayAdapter<>(_view.getContext(),android.R.layout.simple_spinner_item,array_spinner);
         gender.setAdapter(spinneradapter);
-
 
         setsession();
 
@@ -96,12 +96,12 @@ public class ProfileFragment extends Fragment implements iPresenterUserResponse 
                 save.requestFocus();
             }
         });
+
         changepass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(context, "Change Password", Toast.LENGTH_SHORT).show();
                 doChangeFragment(new ChangePassFragment());
-                Toast.makeText(context, "Chang Password", Toast.LENGTH_SHORT).show();
-
             }
         });
 

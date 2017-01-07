@@ -21,13 +21,13 @@ public class ChangePassFragment extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View _view = inflater.inflate(R.layout.fragment_changepassword, container, false);
-        Log.d("deb", "chang pass");
 
         pass = (EditText) _view.findViewById(R.id.frag_changepass_pass);
         nPass = (EditText) _view.findViewById(R.id.frag_changepass_npass);
         rPass = (EditText) _view.findViewById(R.id.frag_changepass_rpass);
         btnConfirm = (Button) _view.findViewById(R.id.frag_changepass_btnconf);
         btnCancel = (Button) _view.findViewById(R.id.frag_changepass_btncncl);
+        Log.d("deb", "change pass");
 
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,6 +47,6 @@ public class ChangePassFragment extends Fragment {
     }
 
     public void doChangeFragment(Fragment fragment) {
-        getFragmentManager().beginTransaction().replace(R.id.frag_changepass, fragment).commit();
+        getFragmentManager().beginTransaction().replace(R.id.frag_changePass, fragment).commit();
     }
 }
