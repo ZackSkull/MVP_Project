@@ -99,8 +99,8 @@ public class ProfileFragment extends Fragment implements iPresenterUserResponse 
         changepass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                doChangeFragment(new ChangePassFragment());
-                Toast.makeText(context, "Chang Password", Toast.LENGTH_SHORT).show();
+                ((ProfileActivity) getActivity()).doChangeFragment(new ChangePassFragment());
+                Toast.makeText(context, "Change Password", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -142,9 +142,5 @@ public class ProfileFragment extends Fragment implements iPresenterUserResponse 
     @Override
     public void doConnectionError(int message) {
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
-    }
-
-    public void doChangeFragment(Fragment fragment) {
-        getFragmentManager().beginTransaction().replace(R.id.frag_pro, fragment).commit();
     }
 }

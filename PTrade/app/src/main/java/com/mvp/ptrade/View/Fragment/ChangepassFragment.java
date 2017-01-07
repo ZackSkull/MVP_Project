@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.mvp.ptrade.R;
+import com.mvp.ptrade.View.Activity.ProfileActivity;
 
 /**
  * Created by Zackzack on 06/01/2017.
@@ -32,7 +33,7 @@ public class ChangePassFragment extends Fragment {
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                doChangeFragment(new ProfileFragment());
+                ((ProfileActivity) getActivity()).doChangeFragment(new ProfileFragment());
             }
         });
 
@@ -44,9 +45,5 @@ public class ChangePassFragment extends Fragment {
         });
 
         return _view;
-    }
-
-    public void doChangeFragment(Fragment fragment) {
-        getFragmentManager().beginTransaction().replace(R.id.frag_changepass, fragment).commit();
     }
 }
