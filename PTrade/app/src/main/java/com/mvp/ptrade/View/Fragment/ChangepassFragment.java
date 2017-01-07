@@ -24,7 +24,7 @@ import com.mvp.ptrade.View.Activity.ProfileActivity;
  * Created by Zackzack on 06/01/2017.
  */
 
-public class ChangePassFragment extends Fragment implements iPresenterUserResponse {
+public class ChangepassFragment extends Fragment implements iPresenterUserResponse {
     EditText pass, nPass, rPass;
     Button btnConfirm, btnCancel;
     Context context;

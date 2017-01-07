@@ -100,7 +100,7 @@ public class ProfileFragment extends Fragment implements iPresenterUserResponse 
         changepass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((ProfileActivity) getActivity()).doChangeFragment(new ChangePassFragment());
+                ((ProfileActivity) getActivity()).doChangeFragment(new ChangepassFragment());
             }
         });
 
