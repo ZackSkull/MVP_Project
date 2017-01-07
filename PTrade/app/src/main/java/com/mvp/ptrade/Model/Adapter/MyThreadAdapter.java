@@ -19,7 +19,6 @@ import java.util.List;
  */
 
 public class MyThreadAdapter extends RecyclerView.Adapter<MyThreadAdapter.MyViewHolder> {
-
     private Context context;
     private List<ThreadModel> threads;
     public TextView name, description;
@@ -27,8 +26,6 @@ public class MyThreadAdapter extends RecyclerView.Adapter<MyThreadAdapter.MyView
     public CardView cardView;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-
-
         public MyViewHolder(View view) {
             super(view);
             name = (TextView) view.findViewById(R.id.trditem_textname);
@@ -38,7 +35,6 @@ public class MyThreadAdapter extends RecyclerView.Adapter<MyThreadAdapter.MyView
         }
     }
 
-
     public MyThreadAdapter(Context context, List<ThreadModel> threads) {
         this.context = context;
         this.threads = threads;
@@ -46,9 +42,7 @@ public class MyThreadAdapter extends RecyclerView.Adapter<MyThreadAdapter.MyView
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_thread, parent, false);
-
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_thread, parent, false);
         return new MyViewHolder(itemView);
     }
 
@@ -61,7 +55,7 @@ public class MyThreadAdapter extends RecyclerView.Adapter<MyThreadAdapter.MyView
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                //open threaddetail
             }
         });
     }
