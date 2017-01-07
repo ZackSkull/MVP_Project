@@ -57,5 +57,29 @@ public class ProfilePresenter {
         });
 
     }
+
+    public void doUpdatePassword(String _email, String _oldPass, String _newPass) {
+        Map<String, String> _userdatas = new HashMap<>();
+        _userdatas.put("email", _email);
+        _userdatas.put("password", _oldPass);
+        _userdatas.put("newPassword", _newPass);
+
+        ConnectionAPI.getInstance().getAPIModel().doUpdatePassword(_userdatas).enqueue(new Callback<UserResponse>() {
+            @Override
+            public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
+                if (response.body().getCode().equals("201")) {
+                    profileResponse.doSuccess(response.body());
+                } else if (response.body().getCode().equals("401")) {
+                    profileResponse.doFail(response.body().getMessage());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<UserResponse> call, Throwable t) {
+                profileResponse.doConnectionError(R.string.connection_error);
+            }
+        });
+
+    }
 }
 

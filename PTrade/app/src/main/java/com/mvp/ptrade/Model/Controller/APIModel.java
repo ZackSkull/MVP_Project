@@ -25,6 +25,9 @@ public interface APIModel {
     @POST("user/login")
     Call<UserResponse> doLogin(@Body Map<String, String> userdata);
 
+    @POST("user/updatePass")
+    Call<UserResponse> doUpdatePassword(@Body Map<String, String> userdata);
+
     @POST("user/update")
     Call<UserResponse> doUpdateProfile(@Body Map<String, String> userdata);
 //    Route::get('spec', 'SpecDefaultController@index');

@@ -18,6 +18,7 @@ Route::get('/', function () {
 Route::post('user/register', 'UserController@doRegister');
 
 Route::post('user/login', 'UserController@doLogin');
+Route::post('user/updatePass', 'UserController@doUpdatePassword');
 Route::post('user/update', 'UserController@doUpdateProfile');
 
 Route::get('product', 'ProductController@index');

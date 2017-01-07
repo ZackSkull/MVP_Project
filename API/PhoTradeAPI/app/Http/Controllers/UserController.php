@@ -40,7 +40,7 @@ class UserController extends Controller
 
     	if(Auth::attempt($_userdatas))
 		{
-			$_userExist = User::where('email', $request['email'])->get()->first();
+			$_userExist = Auth::user();
 			if ($_userExist != null)
 			{
     			return response()->json(['message'=> 'Login Success', 'code'=> '200', 'user'=> $_userExist]);
@@ -71,7 +71,25 @@ class UserController extends Controller
 			
 			return response()->json(['message'=> 'Update Success', 'code'=> '201', 'user'=> $_user]);
 		}
-    	return response()->json(['message'=> 'No data found.', 'code'=> '401']);
+    	return response()->json(['message'=> 'Update Failed.', 'code'=> '401']);
+
+    }
+
+	function doUpdatePassword (Request $request) {
+		$_userdatas = array(
+    		'email'    => $request['email'],
+			'password' => $request['password']
+    	);
+
+		if (Auth::attempt($_userdatas))
+		{
+			$_user = Auth::user();
+			$_user->password = Hash::make($request['newPassword']);
+			$_user->save();
+
+			return response()->json(['message'=> 'Change Password Success', 'code'=> '201', 'user'=> $_user]);
+		}
+    	return response()->json(['message'=> 'Change Password Failed.', 'code'=> '401']);
 
     }
 }
