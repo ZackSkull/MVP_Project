@@ -17,11 +17,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.mvp.ptrade.Model.Adapter.MyThreadAdapter;
+import com.mvp.ptrade.Model.Basic.ThreadModel;
 import com.mvp.ptrade.Model.SessionManager;
 import com.mvp.ptrade.R;
 import com.mvp.ptrade.View.Fragment.Tabs.InboxTabs.MailViewPagerFragment;
 import com.mvp.ptrade.View.Fragment.Tabs.ThreadTabs.ThreadViewPagerFragment;
 import com.mvp.ptrade.View.Fragment.ThreadFragment.ThreadAddFragment;
+
+import java.util.List;
 
 public class MainActivity extends ParentActivity{
     Context context;

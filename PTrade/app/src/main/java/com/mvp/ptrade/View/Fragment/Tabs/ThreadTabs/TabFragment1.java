@@ -1,6 +1,7 @@
 package com.mvp.ptrade.View.Fragment.Tabs.ThreadTabs;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -28,11 +29,12 @@ import java.util.List;
 
 public class TabFragment1 extends Fragment implements iPresenterThreadResponse {
     private RecyclerView recyclerView;
-    private List<ThreadModel> threads;
+    private List<ThreadModel> threadlist;
     private MyThreadAdapter myThreadAdapter;
     private GridLayoutManager myLayoutManager;
     private ThreadPresenter threadPresenter;
     private SwipeRefreshLayout mSwipeRefreshLayout;
+    private Context context;
 
     public TabFragment1(){}
     @Override
@@ -47,10 +49,11 @@ public class TabFragment1 extends Fragment implements iPresenterThreadResponse {
         threadPresenter = new ThreadPresenter(this);
         recyclerView = (RecyclerView) _view.findViewById(R.id.tab1_rv);
         mSwipeRefreshLayout = (SwipeRefreshLayout) _view.findViewById(R.id.tab1_refresh);
+        threadPresenter = new ThreadPresenter(this);
+        context = getContext();
 
-        threads = new ArrayList<>();
-        myThreadAdapter = new MyThreadAdapter(getActivity(),threads);
-
+        threadlist = new ArrayList<>();
+        myThreadAdapter = new MyThreadAdapter(context,threadlist);
         myLayoutManager = new GridLayoutManager(getActivity(),2);
         recyclerView.setLayoutManager(myLayoutManager);
         threadPresenter.getThreads();
@@ -71,7 +74,8 @@ public class TabFragment1 extends Fragment implements iPresenterThreadResponse {
     @Override
     public void doSuccess(ThreadResponse threadResponse) {
         ThreadResponse newResponse = threadResponse;
-        MyThreadAdapter adapter = new MyThreadAdapter(getActivity(), newResponse.getThreads());
+        MyThreadAdapter adapter = new MyThreadAdapter(context, threadResponse.getThreads());
+        myThreadAdapter.notifyDataSetChanged();
         recyclerView.setAdapter(adapter);
         mSwipeRefreshLayout.setRefreshing(false);
     }
