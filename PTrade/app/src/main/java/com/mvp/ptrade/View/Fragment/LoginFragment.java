@@ -1,6 +1,7 @@
 package com.mvp.ptrade.View.Fragment;
 
 import android.content.Context;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -43,6 +44,8 @@ public class LoginFragment extends Fragment implements iPresenterUserResponse {
         txtpassword = (EditText) _view.findViewById(R.id.login_txtpassword);
         btnlogin    = (Button) _view.findViewById(R.id.login_loginbtn);
 
+        txtredirectregister.setPaintFlags(txtredirectregister.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+
         context = getContext();
         sessionManager = new SessionManager(context);
         loginpresenter = new LoginPresenter(this);
@@ -68,7 +71,6 @@ public class LoginFragment extends Fragment implements iPresenterUserResponse {
 
     @Override
     public void doSuccess(UserResponse userResponse) {
-//        Log.d("Call request", userResponse.toString());
         sessionManager.doCreateSession(userResponse.getUser());
         Toast.makeText(context, userResponse.getMessage(), Toast.LENGTH_SHORT).show();
         AuthActivity.doChangeActivity(context, MainActivity.class);

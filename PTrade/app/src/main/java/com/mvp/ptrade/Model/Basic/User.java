@@ -16,7 +16,7 @@ public class User {
     private String city;
     private String address;
     private String phone;
-    private Byte gender;
+    private Integer gender;
 
     public String getAddress() {
         return address;
@@ -34,11 +34,11 @@ public class User {
         this.phone = phone;
     }
 
-    public Byte getGender() {
+    public Integer getGender() {
         return gender;
     }
 
-    public void setGender(Byte gender) {
+    public void setGender(Integer gender) {
         this.gender = gender;
     }
 

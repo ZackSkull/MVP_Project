@@ -24,9 +24,9 @@ public class ThreadViewPagerFragment extends Fragment{
         TabLayout tabLayout = (TabLayout) _view.findViewById(R.id.tab_layout);
         viewPager = (ViewPager) _view.findViewById(R.id.pager);
         final PageAdapter adapter = new PageAdapter(getFragmentManager());
-        adapter.addFragment(new FragmentListThread(new TabFragment1(),"Tab 1"));
-        adapter.addFragment(new FragmentListThread(new TabFragment2(),"Tab 2"));
-        adapter.addFragment(new FragmentListThread(new TabFragment3(),"Tab 3"));
+        adapter.addFragment(new FragmentListThread(new TabFragment1(),"New Threads"));
+        adapter.addFragment(new FragmentListThread(new TabFragment2(),"Active Threads"));
+        adapter.addFragment(new FragmentListThread(new TabFragment3(),"Threads History"));
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.setupWithViewPager(viewPager);

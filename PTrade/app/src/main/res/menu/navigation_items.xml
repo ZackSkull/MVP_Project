@@ -4,29 +4,27 @@
             android:id="@+id/main"
             android:checked="true"
             android:icon="@mipmap/ic_launcher"
-            android:title="@string/main" />
+            android:title="@string/thread" />
         <item
-            android:id="@+id/navigation_item_2"
+            android:id="@+id/nav_item_mail"
             android:icon="@mipmap/ic_launcher"
-            android:title="@string/navigation_view_item_2" />
+            android:title="@string/mail" />
+        <!--<item-->
+            <!--android:id="@+id/navigation_item_2"-->
+            <!--android:icon="@mipmap/ic_launcher"-->
+            <!--android:title="@string/navigation_view_item_2" />-->
     </group>
 
-    <item
-        android:id="@+id/navigation_view_category_2"
-        android:title="@string/navigation_view_category_2">
-        <menu>
-            <item
-                android:id="@+id/nav_item_mail"
-                android:icon="@mipmap/ic_launcher"
-                android:title="@string/mail" />
-            <item
-                android:id="@+id/navigation_item_4"
-                android:icon="@mipmap/ic_launcher"
-                android:title="@string/navigation_view_item_4" />
-            <item
-                android:id="@+id/nav_logout"
-                android:icon="@mipmap/ic_launcher"
-                android:title="@string/logout" />
-        </menu>
-    </item>
+    <group
+        android:id="@+id/menu_bottom"
+        android:checkableBehavior="none">
+        <!--<item-->
+            <!--android:id="@+id/navigation_item_4"-->
+            <!--android:icon="@mipmap/ic_launcher"-->
+            <!--android:title="@string/navigation_view_item_4" />-->
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@mipmap/ic_launcher"
+            android:title="@string/logout" />
+    </group>
 </menu>

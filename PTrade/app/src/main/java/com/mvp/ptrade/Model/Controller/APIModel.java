@@ -12,6 +12,7 @@ import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
+import retrofit2.http.Url;
 
 /**
  * Created by Zackzack on 18/12/2016.
@@ -24,6 +25,8 @@ public interface APIModel {
     @POST("user/login")
     Call<UserResponse> doLogin(@Body Map<String, String> userdata);
 
+    @POST("user/update")
+    Call<UserResponse> doUpdateProfile(@Body Map<String, String> userdata);
 //    Route::get('spec', 'SpecDefaultController@index');
 //    Route::get('spec/{id}', 'SpecDefaultController@show');
 //    Route::post('spec/store', 'SpecDefaultController@store');

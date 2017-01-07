@@ -14,7 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ConnectionAPI {
 //    private static final String BASEURL = "http://192.168.43.142:8000/";//"http://10.0.2.2/mvp/MVP_Project/API/public/";//192.168.0.100:8001/
 //    private static final String BASEURL = "http://10.11.2.14:8000/";
-    private static final String BASEURL = "http://192.168.43.10:8000/";
+    private static final String BASEURL = "http://192.168.43.142:8000/";
 
     private static ConnectionAPI instance;
     private static APIModel api;

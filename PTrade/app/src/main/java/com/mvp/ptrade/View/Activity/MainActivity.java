@@ -4,10 +4,12 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,6 +21,7 @@ import com.mvp.ptrade.Model.SessionManager;
 import com.mvp.ptrade.R;
 import com.mvp.ptrade.View.Fragment.Tabs.InboxTabs.MailViewPagerFragment;
 import com.mvp.ptrade.View.Fragment.Tabs.ThreadTabs.ThreadViewPagerFragment;
+import com.mvp.ptrade.View.Fragment.ThreadFragment.ThreadAddFragment;
 
 public class MainActivity extends ParentActivity{
     Context context;
@@ -64,7 +67,10 @@ public class MainActivity extends ParentActivity{
 
     private void initInstancesNavigation() {
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawerToggle = new ActionBarDrawerToggle(MainActivity.this, drawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close){
+        drawerToggle = new ActionBarDrawerToggle(MainActivity.this,
+                drawerLayout,
+                R.string.navigation_drawer_open,
+                R.string.navigation_drawer_close){
             @Override
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
@@ -75,7 +81,7 @@ public class MainActivity extends ParentActivity{
                 super.onDrawerClosed(drawerView);
             }
         };
-        drawerLayout.setDrawerListener(drawerToggle);
+        drawerLayout.addDrawerListener(drawerToggle);
 
         navigation = (NavigationView) findViewById(R.id.navigation_view);
         navigation.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -87,17 +93,17 @@ public class MainActivity extends ParentActivity{
                         doChangeContentFragment(new ThreadViewPagerFragment());
 //                        Toast.makeText(context, R.string.main, Toast.LENGTH_SHORT).show();
                         break;
-                    case R.id.navigation_item_2:
-                        Toast.makeText(context, R.string.navigation_view_item_2, Toast.LENGTH_SHORT).show();
-                        break;
+//                    case R.id.navigation_item_2:
+//                        Toast.makeText(context, R.string.navigation_view_item_2, Toast.LENGTH_SHORT).show();
+//                        break;
                     case R.id.nav_item_mail:
                         doChangeContentFragment(new MailViewPagerFragment());
 //                        doChangeActivity(context, InboxActivity.class);
 //                        Toast.makeText(context, R.string.Inbox, Toast.LENGTH_SHORT).show();
                         break;
-                    case R.id.navigation_item_4:
-                        Toast.makeText(context, R.string.navigation_view_item_4, Toast.LENGTH_SHORT).show();
-                        break;
+//                    case R.id.navigation_item_4:
+//                        Toast.makeText(context, R.string.navigation_view_item_4, Toast.LENGTH_SHORT).show();
+//                        break;
                     case R.id.nav_logout:
                         sessionManager.doClearSession();
                         if (!sessionManager.isUserLoggedIn()) {
@@ -105,7 +111,8 @@ public class MainActivity extends ParentActivity{
                         }
                         break;
                 }
-                return false;
+                drawerLayout.closeDrawers();  // CLOSE DRAWER
+                return true;
             }
         });
         name = (TextView) navigation.getHeaderView(0).findViewById(R.id.nav_header_name);
@@ -114,7 +121,7 @@ public class MainActivity extends ParentActivity{
         nav_profile_pic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                doChangeActivity(context,ProfileActivity.class);
+                doChangeActivity(context, ProfileActivity.class);
             }
         });
 
@@ -142,16 +149,17 @@ public class MainActivity extends ParentActivity{
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.main:
-
                 return true;
             case android.R.id.home:
-                //View decorview = getWindow().getDecorView();
-                //decorview.setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION|View.SYSTEM_UI_FLAG_FULLSCREEN);
-                //onBackPressed();
+                if (drawerLayout.isDrawerOpen(GravityCompat.START))
+                    drawerLayout.closeDrawers();                   // CLOSE DRAWER
+                else
+                    drawerLayout.openDrawer(GravityCompat.START);  // OPEN DRAWER
                 return true;
-//            case R.id.autenticationmenu:
+            case R.id.autenticationmenu:
 //                doChangeActivity(context, AuthActivity.class);
-//                return true;
+                doChangeContentFragment(new ThreadAddFragment());
+                return true;
             case R.id.nav_logout:
                 sessionManager.doClearSession();
                 if (!sessionManager.isUserLoggedIn()) {

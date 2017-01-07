@@ -80,7 +80,7 @@
                 android:id="@+id/regis_registerbtn"
                 android:text="@string/Register"
                 android:textColor="@color/White"
-                android:background="@drawable/buttonauthshape"/>
+                android:background="@drawable/ripple_effect"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -89,7 +89,8 @@
                 android:textAlignment="center"
                 android:text="@string/HasAcc"
                 android:textColor="@color/White"
-                android:id="@+id/regis_txtlogin"/>
+                android:id="@+id/regis_txtlogin"
+                android:layout_marginTop="10dp" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

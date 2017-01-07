@@ -1,5 +1,7 @@
 package com.mvp.ptrade.Presenter.Trd;
 
+import android.util.Log;
+
 import com.mvp.ptrade.Model.Connections.ConnectionAPI;
 import com.mvp.ptrade.Model.Responses.ThreadResponse;
 import com.mvp.ptrade.Presenter.iPresenterThreadResponse;
@@ -24,6 +26,7 @@ public class ThreadPresenter {
         ConnectionAPI.getInstance().getAPIModel().getThreads().enqueue(new Callback<ThreadResponse>() {
             @Override
             public void onResponse(Call<ThreadResponse> call, Response<ThreadResponse> response) {
+                Log.d("response", response.body().getCode());
                 if (response.body().getCode().equals("201")) {
                     iresponse.doSuccess(response.body());
                 } else if (response.body().getCode().equals("401")) {

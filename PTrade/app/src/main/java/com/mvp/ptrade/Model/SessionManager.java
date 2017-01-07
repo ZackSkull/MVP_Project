@@ -40,7 +40,8 @@ public class SessionManager {
     }
 
     public User getUserLoggedIn () {
-        return new Gson().fromJson(sharedprf.getString(KEYUSERDATA, ""), User.class);
+        User user = new Gson().fromJson(sharedprf.getString(KEYUSERDATA, ""), User.class);
+        return user;
     }
 
     public void doClearSession () {

@@ -1,6 +1,7 @@
 package com.mvp.ptrade.View.Fragment;
 
 import android.content.Context;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
@@ -45,6 +46,8 @@ public class RegisterFragment extends Fragment implements iPresenterUserResponse
         repassword = (EditText) _view.findViewById(R.id.regis_txtpassword2);
         txtlogin = (TextView) _view.findViewById(R.id.regis_txtlogin);
         registerbtn = (Button) _view.findViewById(R.id.regis_registerbtn);
+
+        txtlogin.setPaintFlags(txtlogin.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 
         context = getContext();
         sessionManager = new SessionManager(context);

@@ -1,5 +1,8 @@
 package com.mvp.ptrade.Presenter.User;
 
+import android.util.Log;
+
+import com.mvp.ptrade.Model.Basic.User;
 import com.mvp.ptrade.Model.Connections.ConnectionAPI;
 import com.mvp.ptrade.Model.Responses.UserResponse;
 import com.mvp.ptrade.Presenter.iPresenterUserResponse;
@@ -17,31 +20,39 @@ import retrofit2.Response;
  */
 
 public class ProfilePresenter {
-    iPresenterUserResponse registerresponse;
+    iPresenterUserResponse profileResponse;
 
-    public ProfilePresenter(iPresenterUserResponse registerresponse) {
-        this.registerresponse = registerresponse;
+    public ProfilePresenter(iPresenterUserResponse profileResponse) {
+        this.profileResponse = profileResponse;
     }
 
-    public void doUpdate(String username, String email, String password) {
+    public void doUpdateProfile(User _user) {
         Map<String, String> _userdatas = new HashMap<>();
-        _userdatas.put("username", username);
-        _userdatas.put("email", email);
-        _userdatas.put("password", password);
+        _userdatas.put("id", _user.getId());
+        _userdatas.put("username", _user.getUsername());
+        _userdatas.put("name", _user.getName());
+        _userdatas.put("email", _user.getEmail());
+        _userdatas.put("city", _user.getCity());
+        _userdatas.put("address", _user.getAddress());
+        _userdatas.put("phone", _user.getPhone());
+        _userdatas.put("bio", _user.getBio());
+        _userdatas.put("gender", _user.getGender().toString());
 
-        ConnectionAPI.getInstance().getAPIModel().doRegister(_userdatas).enqueue(new Callback<UserResponse>() {
+        Log.d("status", "start update");
+
+        ConnectionAPI.getInstance().getAPIModel().doUpdateProfile(_userdatas).enqueue(new Callback<UserResponse>() {
             @Override
             public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
                 if (response.body().getCode().equals("201")) {
-                    registerresponse.doSuccess(response.body());
+                    profileResponse.doSuccess(response.body());
                 } else if (response.body().getCode().equals("401")) {
-                    registerresponse.doFail(response.body().getMessage());
+                    profileResponse.doFail(response.body().getMessage());
                 }
             }
 
             @Override
             public void onFailure(Call<UserResponse> call, Throwable t) {
-                registerresponse.doConnectionError(R.string.connection_error);
+                profileResponse.doConnectionError(R.string.connection_error);
             }
         });
 
